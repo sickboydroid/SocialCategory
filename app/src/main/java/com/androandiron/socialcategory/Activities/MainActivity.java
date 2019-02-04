@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.androandiron.socialcategory.R;
 import com.androandiron.socialcategory.UI.BaseActivity;
+import android.view.View.OnClickListener;
+import android.content.Intent;
 
 public class MainActivity extends BaseActivity {
 	final Context context = this;
@@ -50,21 +52,270 @@ public class MainActivity extends BaseActivity {
 		R.string.tumler
 	};
 
+	// OnClickListeners for popular social media's
+	final OnClickListener[] ON_CLICK_LISTENERS_FOR_POPULAR_SOCIAL_MEDIA={
+		new OnClickListener(){ // Facebook
+
+			@Override
+			public void onClick (View view) {
+				Intent intent = new Intent(MainActivity.this,SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR,R.color.facebook_blue);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA,"www.facebook.com");
+				startActivity(intent);
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Netflix
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Youtube
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Snapchat
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Instagram
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Google+
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Twitter
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Stackoverflow
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Quroa
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Github
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Pinterest
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Reddit
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Tumler
+				// TODO: Implement this method
+			}
+		}
+
+	};
+
+	// Images Popular of social media websites
+	final int[] IMAGES_OF_OTHER_SOCIAL_MEDIA = {
+		R.drawable.img_nine_gag,
+		R.drawable.img_badoo,
+		R.drawable.img_dailymotion,
+		R.drawable.img_digg,
+		R.drawable.img_flicker,
+		R.drawable.img_linkedin,
+		R.drawable.img_meetup,
+		R.drawable.img_my_life,
+		R.drawable.img_my_space,
+		R.drawable.img_qzone,
+		R.drawable.img_stumbleupon
+	};
+
+	// Names Popular of social media websites
+	final int[] NAMES_OF_OTHER_SOCIAL_MEDIA = {
+		R.string.nine_gag,
+		R.string.badoo,
+		R.string.dailymotion,
+		R.string.digg,
+		R.string.flicker,
+		R.string.linkedin,
+		R.string.meetup,
+		R.string.my_life,
+		R.string.my_space,
+		R.string.qzone,
+		R.string.stumbleupon
+	};
+
+	// OnClickListeners for other social media's
+	final OnClickListener[] ON_CLICK_LISTENERS_FOR_OTHER_SOCIAL_MEDIA={
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Nine gag
+			}
+		},
+		
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Badoo
+			}
+		},
+		
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Dailymotion
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Digg
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Flicker
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Linkedin
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Meetup
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // MyLife
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // MySpace
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Qzone
+				// TODO: Implement this method
+			}
+		},
+
+		new OnClickListener(){
+
+			@Override
+			public void onClick (View view) { // Stumbleupon
+				// TODO: Implement this method
+			}
+		}
+
+	};
+
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(createBlock(IMAGES_OF_POPULAR_SOCIAL_MEDIA, NAMES_OF_POPULAR_SOCIAL_MEDIA));
+
+		// Creating main layout (ScrollView)
+		ScrollView mainLayoutScrollView = new ScrollView(context);
+
+		// Creating LinearLayout for single column (OneColumn = LinearLayout + RelativeLayout)
+		LinearLayout mainColumnHandlerLinearLayout = new LinearLayout(context);
+
+		// Setting layout params two above two
+		mainLayoutScrollView.setLayoutParams(setLayoutParamsToMatchParent());
+		mainColumnHandlerLinearLayout.setLayoutParams(setLayoutParamsToMatchParent());
+
+		// Adding main linearlayout to root layout (Scrollview)
+		mainLayoutScrollView.addView(mainColumnHandlerLinearLayout);
+
+		// Creating blocks
+		mainColumnHandlerLinearLayout = (LinearLayout) createSingleBlock(mainColumnHandlerLinearLayout, getString(R.string.popular_social_media), IMAGES_OF_POPULAR_SOCIAL_MEDIA, NAMES_OF_POPULAR_SOCIAL_MEDIA, ON_CLICK_LISTENERS_FOR_POPULAR_SOCIAL_MEDIA);
+		mainColumnHandlerLinearLayout = (LinearLayout) createSingleBlock(mainColumnHandlerLinearLayout, getString(R.string.other_social_media) , IMAGES_OF_OTHER_SOCIAL_MEDIA, NAMES_OF_OTHER_SOCIAL_MEDIA, ON_CLICK_LISTENERS_FOR_OTHER_SOCIAL_MEDIA);
+
+		// Setting content view
+		setContentView(mainLayoutScrollView);
     }
 
 	// Creates single block with title
-	public View createBlock (final int[] RES_ID_OF_IMAGES, final int[] RES_ID_OF_NAMES) {
+	public View createSingleBlock (LinearLayout mainColumnHandlerLinearLayout, String blockTitle, final int[] RES_ID_OF_IMAGES, final int[] RES_ID_OF_NAMES, final OnClickListener[] ON_CLICK_LISTENERS) {
 		int noOfViewsInRow = 2; // Stores no. of views that should be created in row (Based on device and orientation)
 		int noOfViewsCreated = 0; // Stores no. of views created in rows
 
 		// Checking for device (Tablet or Smartphone) for setting no of rows in one column
 		if (isTablet()) {
 			// It is tablet
-			
+
 			if (isInLandscapemode())
 			// It is in Landscape mode
 				noOfViewsInRow = 5;
@@ -74,7 +325,7 @@ public class MainActivity extends BaseActivity {
 				noOfViewsInRow = 4;
 		} else {
 			// It is SmartPhone
-			
+
 			if (isInLandscapemode())
 			// It is in Landscape mode
 				noOfViewsInRow = 4;
@@ -84,25 +335,12 @@ public class MainActivity extends BaseActivity {
 				noOfViewsInRow = 3;
 		}
 
-		/* 
-		 * Creating main layout (ScrollView)
-		 */
-		ScrollView mainLayoutScrollView = new ScrollView(context);
-		
-		/* 
-		 * Creating LinearLayout for single column (OneColumn = LinearLayout + RelativeLayout)
-		 */
-		LinearLayout mainColumnHandlerLinearLayout = new LinearLayout(context);
-
-		// Setting layout params
-		mainLayoutScrollView.setLayoutParams(setLayoutParamsToMatchParent());
-		mainColumnHandlerLinearLayout.setLayoutParams(setLayoutParamsToMatchParent());
 
 		// Setting orientation of LinearLayout
 		mainColumnHandlerLinearLayout.setOrientation(LinearLayout.VERTICAL);
 
 		// Setting title of block
-		mainColumnHandlerLinearLayout.addView(getTitleOfBlock(getString(R.string.popular_social_media)));
+		mainColumnHandlerLinearLayout.addView(getTitleOfBlock(blockTitle));
 
 		// Creating all other views
 		while (noOfViewsCreated != RES_ID_OF_IMAGES.length) {
@@ -128,6 +366,9 @@ public class MainActivity extends BaseActivity {
 				ImageButton iconOfSocialMedia = singleView.findViewById(R.id.view_blue_print_for_social_mediaImageButton_icon_of_social_media_website);
 				iconOfSocialMedia.setImageResource(RES_ID_OF_IMAGES[noOfViewsCreated]);
 
+				// Setting onClickListener to image button
+				iconOfSocialMedia.setOnClickListener(ON_CLICK_LISTENERS[noOfViewsCreated]);
+
 				// Setting title to TextView (Social Media Wbsites name)
 				TextView iconTitleOfSocialMedia = singleView.findViewById(R.id.view_blue_print_for_social_mediaTextView_title_of_social_media_website);
 				iconTitleOfSocialMedia.setText(RES_ID_OF_NAMES[noOfViewsCreated]);
@@ -142,11 +383,8 @@ public class MainActivity extends BaseActivity {
 			mainColumnHandlerLinearLayout.addView(singleColumnLinearLayout);
 		}
 
-		// Adding main linearlayout root layout (Scrollview)
-		mainLayoutScrollView.addView(mainColumnHandlerLinearLayout);
-
 		// Return rootView
-		return mainLayoutScrollView;
+		return mainColumnHandlerLinearLayout;
 	}
 
 	// Returns title of block (Styled)

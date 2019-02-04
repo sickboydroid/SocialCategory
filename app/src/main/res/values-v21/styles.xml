@@ -10,4 +10,9 @@
         <item name="android:textColor">@color/primaryTextColor</item>
         <item name="android:textColorPrimary">@color/white</item>
     </style> 
+
+	<style name="NoActionBar" parent="BaseTheme">
+		<item name="android:windowActionBar">false</item>
+		<item name="android:windowNoTitle">true</item>
+	</style>
 </resources>
