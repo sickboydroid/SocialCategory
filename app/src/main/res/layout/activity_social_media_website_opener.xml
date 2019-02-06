@@ -4,19 +4,23 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical">
-
+	
 	<ProgressBar
 		style="?android:attr/progressBarStyleHorizontal"
 		android:id="@+id/activity_social_media_website_openerProgressBar"
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
-		/>
+		android:layout_marginTop="-7dp"
+		android:layout_marginBottom="-7dp"
+	/>
 	
-	<com.androandiron.socialcategory.Views.CustomWebViewForSocialMediaWebSites
+	
+	<WebView
 		android:id="@+id/activity_social_media_website_openercom.androandiron.socialcategory.Views.CustomWebViewForSocialMediaWebSites"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
 		/>
-
+	
 </LinearLayout>
 

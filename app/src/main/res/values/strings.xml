@@ -2,6 +2,10 @@
 <resources>
 
     <string name="app_name">Social Category</string>
+	
+	<!--Menus-->
+	<string name="about">About</string>
+	<string name="about_app">Developed By: AndroAndiron\nPublish Date:\nEmail:\nWebsite:\n\n\n\nCurrent Version:</string>
 
 	<!--	Popular Social Media websites	-->
 	<string name="popular_social_media">Popular Social Media</string>
@@ -18,7 +22,7 @@
 	<string name="pinterest">Pinterest</string>
 	<string name="tumler">Tumler</string>
 	<string name="reddit">Reddit</string>
-	
+
 	<!--	Other Social Media websites		-->
 	<string name="other_social_media">Other Social Media</string>
 	<string name="nine_gag">9 Gag</string>
@@ -26,11 +30,11 @@
 	<string name="dailymotion">Dailymotion</string>
 	<string name="digg">Digg</string>
 	<string name="flicker">Flikcer</string>
-	<string name="linkedin">Linkedin+</string>
+	<string name="linkedin">Linkedin</string>
 	<string name="meetup">Meetup</string>
 	<string name="my_life">MyLife</string>
 	<string name="my_space">MySpace</string>
 	<string name="qzone">Qzone</string>
 	<string name="stumbleupon">StumbleUpon</string>
-	
+
 </resources>

@@ -18,6 +18,32 @@
 	<color name="">@android:color/</color>
 	<color name="">@android:color/</color>-->
 	
+	<!--Popular social media colors-->
 	<color name="facebook_blue">#3C5A99</color>
+	<color name="netflix">#3C5A99</color>
+	<color name="youtube_red">#3C5A99</color>
+	<color name="snapchat">#3C5A99</color>
+	<color name="instagram">#3C5A99</color>
+	<color name="google_plus_red">#3C5A99</color>
+	<color name="twitter_blue">#3C5A99</color>
+	<color name="stackoverflow">#3C5A99</color>
+	<color name="quora_red">#3C5A99</color>
+	<color name="github_black">#3C5A99</color>
+	<color name="pinterest">#3C5A99</color>
+	<color name="reddit">#3C5A99</color>
+	<color name="tumler">#3C5A99</color>
+	
+	<!--Other Social media colors-->
+	<color name="nine_gag">#3C5A99</color>
+	<color name="badoo">#3C5A99</color>
+	<color name="dailymotion">#3C5A99</color>
+	<color name="digg">#3C5A99</color>
+	<color name="flicker">#3C5A99</color>
+	<color name="linkedin">#3C5A99</color>
+	<color name="meetup">#3C5A99</color>
+	<color name="mylife">#3C5A99</color>
+	<color name="myspace">#3C5A99</color>
+	<color name="qzone">#3C5A99</color>
+	<color name="stumbleupon">#3C5A99</color>
 	
 </resources>

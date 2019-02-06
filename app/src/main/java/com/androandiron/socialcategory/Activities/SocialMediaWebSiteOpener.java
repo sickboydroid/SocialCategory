@@ -1,7 +1,9 @@
 package com.androandiron.socialcategory.Activities;
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.TypedArray;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -11,42 +13,57 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.RadioGroup.LayoutParams;
 import com.androandiron.socialcategory.R;
 import com.androandiron.socialcategory.UI.BaseActivity;
-import com.androandiron.socialcategory.Views.CustomWebViewForSocialMediaWebSites;
 
 public class SocialMediaWebSiteOpener extends BaseActivity {
 	Context context = this;
 
 	WebView mWebView = null;
 
+	// Keys
 	public static final String KEY_RES_ID_STATUS_BAR_COLOR = "ksjd34kj3k4jk4jkj3_keyStatusBarColor";
 	public static final String KEY_URL_OF_SOCIAL_MEDIA = "j3k2j33kj32k3j2_keyURLOfWebpage";
 
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Intent intent = getIntent();
-		String Url = "http://" + intent.getStringExtra(KEY_URL_OF_SOCIAL_MEDIA);
-		setStatusBarColor(getResources().getColor(intent.getIntExtra(KEY_RES_ID_STATUS_BAR_COLOR, R.color.primaryDarkColor)));
 
+		// Getting and setting data
+		String url = getIntent().getStringExtra(KEY_URL_OF_SOCIAL_MEDIA);
+		if (!url.startsWith("http://"))
+			url = "http://" + url;
+		int color = getResources().getColor(getIntent().getIntExtra(KEY_RES_ID_STATUS_BAR_COLOR,
+																	 R.color.primaryDarkColor));
+		setStatusBarColor(color);
+
+		// Setting layout
 		setContentView(R.layout.activity_social_media_website_opener);
-		setWebView(setUpWebView((ProgressBar) findViewById(R.id.activity_social_media_website_openerProgressBar)));
-		getWebView().loadUrl(Url);
+
+		// Setting up webview for first time
+		setWebView(setUpWebView((ProgressBar) findViewById(R.id.activity_social_media_website_openerProgressBar),color));
+		getWebView().loadUrl(url);
 	}
 
 	// Sets webView for first time
-	public CustomWebViewForSocialMediaWebSites setUpWebView (final ProgressBar progressBar) {
+	public WebView setUpWebView (final ProgressBar progressBar, int color) {
+//		progressBar.setVisibility(View.GONE);
 
-		// Creating webView
-		CustomWebViewForSocialMediaWebSites webView = new CustomWebViewForSocialMediaWebSites(context);
-		webView.setLayoutParams(setLayoutParamsToMatchParent());
+		// getting webView
+		WebView webView = findViewById(R.id.activity_social_media_website_openercom_androandiron_socialcategory_Views_CustomWebViewForSocialMediaWebSites);
+
+		// Setting up progressbar
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) 
+			progressBar.setProgressTintList(ColorStateList.valueOf(color));
+		else {
+			Drawable progressDrawable = progressBar.getProgressDrawable().mutate();
+			progressDrawable.setColorFilter(color, PorterDuff.Mode.SRC_IN);
+			progressBar.setProgressDrawable(progressDrawable);
+		}
 
 		// Adjusting webView
-		webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+//		webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 		webView.setFocusable(true);
 		webView.setFocusableInTouchMode(true);
 
@@ -57,11 +74,11 @@ public class SocialMediaWebSiteOpener extends BaseActivity {
 		settings.setDatabaseEnabled(true);
 		settings.setDatabasePath("/data/data/" + getPackageName() + "/databases/");
 		settings.setJavaScriptCanOpenWindowsAutomatically(true);
-		settings.setSupportMultipleWindows(true);
-		settings.setBuiltInZoomControls(true);
+//		settings.setSupportMultipleWindows(true);
+//		settings.setBuiltInZoomControls(true);
 		settings.setSaveFormData(false);
 		settings.setSavePassword(false);
-		settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
+//		settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
 
 		// Flash settings
 		settings.setPluginState(WebSettings.PluginState.ON);
@@ -78,27 +95,32 @@ public class SocialMediaWebSiteOpener extends BaseActivity {
 			webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 		}
 
-		webView.setWebViewClient(new WebViewClient(){
-				@Override
-				public boolean shouldOverrideUrlLoading (WebView view, String url) {
-					view.loadUrl(url);
-					return true;
-				}
-			});
+		// Setting webclient for loading all links inside app
+		webView.setWebViewClient(new WebViewClient());
 
+		// Setting chrome client for getting to know progress of page in numeric
 		webView.setWebChromeClient(new WebChromeClient(){
 
 				@Override
 				public void onProgressChanged (WebView view, int progress) {
-					if (progress <= 100) {
-						progressBar.setVisibility(View.VISIBLE);
-						progressBar.setProgress(progress);
-					} else
+					if (progress >= 100) {
+						// Page finished
 						progressBar.setVisibility(View.GONE);
+						view.invalidate();
+					} else {
+						// Page is loading
+						if (progressBar.getVisibility() == View.GONE) {
+							//progressBar.setVisibility(View.VISIBLE);
+							view.invalidate();
+						}
+
+						progressBar.setProgress(progress);
+					}
 				}
 			});
 		return webView;
 	}
+
 	// Changes color of status bar
 	public void setStatusBarColor (int color) {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

@@ -1,19 +1,24 @@
 package com.androandiron.socialcategory.Activities;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
 import com.androandiron.socialcategory.R;
 import com.androandiron.socialcategory.UI.BaseActivity;
-import android.view.View.OnClickListener;
-import android.content.Intent;
 
 public class MainActivity extends BaseActivity {
 	final Context context = this;
@@ -58,9 +63,9 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) {
-				Intent intent = new Intent(MainActivity.this,SocialMediaWebSiteOpener.class);
-				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR,R.color.facebook_blue);
-				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA,"www.facebook.com");
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.facebook_blue);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.facebook.com");
 				startActivity(intent);
 			}
 		},
@@ -69,6 +74,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) { // Netflix
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.netflix);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.netflix.com");
+				startActivity(intent);
 			}
 		},
 
@@ -76,7 +85,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) { // Youtube
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.youtube_red);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.youtube.com");
+				startActivity(intent);
 			}
 		},
 
@@ -84,7 +96,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) { // Snapchat
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.snapchat);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.snapchat.com");
+				startActivity(intent);
 			}
 		},
 
@@ -92,7 +107,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) { // Instagram
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.instagram);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.instagram.com");
+				startActivity(intent);
 			}
 		},
 
@@ -100,7 +118,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) { // Google+
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.google_plus_red);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.googleplus.com");
+				startActivity(intent);
 			}
 		},
 
@@ -108,7 +129,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) { // Twitter
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.twitter_blue);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.twitter.com");
+				startActivity(intent);
 			}
 		},
 
@@ -116,7 +140,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) { // Stackoverflow
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.stackoverflow);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.stackoverflow.com");
+				startActivity(intent);
 			}
 		},
 
@@ -124,7 +151,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) { // Quroa
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.quora_red);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.quora.com");
+				startActivity(intent);
 			}
 		},
 
@@ -132,7 +162,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) { // Github
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.github_black);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.github.com");
+				startActivity(intent);
 			}
 		},
 
@@ -140,7 +173,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) { // Pinterest
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.pinterest);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.pinterest.com");
+				startActivity(intent);
 			}
 		},
 
@@ -148,7 +184,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) { // Reddit
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.reddit);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.reddit.com");
+				startActivity(intent);
 			}
 		},
 
@@ -156,7 +195,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick (View view) { // Tumler
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.tumler);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.tumler.com");
+				startActivity(intent);
 			}
 		}
 
@@ -200,14 +242,14 @@ public class MainActivity extends BaseActivity {
 			public void onClick (View view) { // Nine gag
 			}
 		},
-		
+
 		new OnClickListener(){
 
 			@Override
 			public void onClick (View view) { // Badoo
 			}
 		},
-		
+
 		new OnClickListener(){
 
 			@Override
@@ -307,6 +349,33 @@ public class MainActivity extends BaseActivity {
 		setContentView(mainLayoutScrollView);
     }
 
+	@Override
+	public boolean onCreateOptionsMenu (Menu menu) {
+		getMenuInflater().inflate(R.menu.menu_activity_main, menu);
+		
+		// Changing color of menu item
+		int positionOfMenuItem = 0; // or whatever...
+		MenuItem item = menu.getItem(positionOfMenuItem);
+		SpannableString s = new SpannableString(getString(R.string.about));
+		s.setSpan(new ForegroundColorSpan(Color.BLACK), 0, s.length(), 0);
+		item.setTitle(s);
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	public boolean onMenuItemSelected(int featureId , MenuItem item){
+		if(item.getItemId() == R.id.about)
+		{
+			TextView tvAbout = new TextView(context);
+			tvAbout.setLayoutParams(setLayoutParamsToMatchParent());
+			tvAbout.setGravity(Gravity.CENTER);
+			tvAbout.setTypeface(Typeface.SANS_SERIF,Typeface.BOLD_ITALIC);
+			tvAbout.setText(R.string.about);
+			setContentView(tvAbout);
+		}
+		return super.onMenuItemSelected(featureId,item);
+	}
+	
 	// Creates single block with title
 	public View createSingleBlock (LinearLayout mainColumnHandlerLinearLayout, String blockTitle, final int[] RES_ID_OF_IMAGES, final int[] RES_ID_OF_NAMES, final OnClickListener[] ON_CLICK_LISTENERS) {
 		int noOfViewsInRow = 2; // Stores no. of views that should be created in row (Based on device and orientation)
