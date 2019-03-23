@@ -20,18 +20,18 @@
 	
 	<!--Popular social media colors-->
 	<color name="facebook_blue">#3C5A99</color>
-	<color name="netflix">#3C5A99</color>
-	<color name="youtube_red">#3C5A99</color>
-	<color name="snapchat">#3C5A99</color>
-	<color name="instagram">#3C5A99</color>
-	<color name="google_plus_red">#3C5A99</color>
-	<color name="twitter_blue">#3C5A99</color>
-	<color name="stackoverflow">#3C5A99</color>
-	<color name="quora_red">#3C5A99</color>
-	<color name="github_black">#3C5A99</color>
-	<color name="pinterest">#3C5A99</color>
-	<color name="reddit">#3C5A99</color>
-	<color name="tumler">#3C5A99</color>
+	<color name="netflix_red">#e50914</color>
+	<color name="youtube_red">#e62117</color>
+	<color name="snapchat_yellow">#fffc00</color>
+	<color name="instagram_light_blue">#3897f0</color>
+	<color name="google_plus_pink">#db4437</color>
+	<color name="twitter_blue">#1da1f2</color>
+	<color name="stackoverflow_orange">#f48126</color>
+	<color name="quora_red">#b92b27</color>
+	<color name="github_black">#24292e</color>
+	<color name="pinterest_red">#e60023</color>
+	<color name="reddit_orange">#ff4500</color>
+	<color name="tumler_dark_blue">#00142b</color>
 	
 	<!--Other Social media colors-->
 	<color name="nine_gag">#3C5A99</color>

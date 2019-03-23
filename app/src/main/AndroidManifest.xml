@@ -9,7 +9,6 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/BaseTheme"
-		android:resizeableActivity = "true"
 		android:hardwareAccelerated="true">
         <activity
             android:name=".Activities.MainActivity"
