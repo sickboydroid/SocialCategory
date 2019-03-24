@@ -4,55 +4,132 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Toast;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import android.util.Log;
-import android.app.Application;
-import java.util.logging.LogRecord;
 import java.io.BufferedReader;
-import java.io.Reader;
-import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class BaseActivity extends Activity {
 
-	private String CRASH_FILE_PATH;
+	private final String KEY_CRASH_REPORT = "closedLastTimeSafely";
+	private String PATH_TO_CRASH_REPORT_FILE = null;
 
+	/*
+	 * Overrided Methods
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		CRASH_FILE_PATH = getFilesDir() + "crash_report";
+
+		PATH_TO_CRASH_REPORT_FILE = getFilesDir() + "crash_report";
+		
+		savePreferences(KEY_CRASH_REPORT, false);
 	}
 
-	public Context getContext() {
+	@Override
+	public void onUserLeaveHint() {
+		savePreferences(KEY_CRASH_REPORT, true);
+		super.onUserLeaveHint();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		savePreferences(KEY_CRASH_REPORT, false);
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		savePreferences(KEY_CRASH_REPORT, true);
+	}
+
+	@Override
+	public void onDestroy() {
+		savePreferences(KEY_CRASH_REPORT, true);
+		super.onDestroy();
+	}
+
+	/*
+	 * Public Methods
+	 */
+	// Can be used as a terminal
+	public String terminal(String ... cmd) {
+		Process process = null;
+		StringBuilder output = null;
+		BufferedReader bufferedReader = null;
+		String line = null;
+
+		try {
+			process = Runtime.getRuntime().exec(cmd);
+			output = new StringBuilder();
+
+			bufferedReader = new BufferedReader(
+				new InputStreamReader(process.getInputStream()));
+			while ((line = bufferedReader.readLine()) != null)
+				output.append(line + "\n");
+			bufferedReader.close();
+
+			bufferedReader = new BufferedReader(
+				new InputStreamReader(process.getErrorStream()));
+			while ((line = bufferedReader.readLine()) != null)
+				output.append("========Error=========>|  " + line + "\n");
+			bufferedReader.close();
+
+		} catch (IOException e) {} finally {
+			try {
+				if (process != null) process.destroy();
+
+				if (bufferedReader != null) bufferedReader.close();
+
+				return output.toString();
+			} catch (IOException e) {
+				return output.toString();
+			}
+		}
+
+	}
+	
+	// Returns logcat file path
+	public String getLogFilePath(){
+		setCrashReport();
+		return PATH_TO_CRASH_REPORT_FILE;
+	}
+
+	/*
+	 * Protected Methods
+	 */
+	// Returns Context of application
+	protected Context getContext() {
 		return getApplicationContext();
 	}
 
-	public int getDimen(int resId) {
+	// Returns dimension
+	protected int getDimen(int resId) {
 		return (int) getContext().getResources().getDimension(resId);
 	}
 
-	public String[] getStringArray(int resId) {
+	// Return String array
+	protected String[] getStringArray(int resId) {
 		return getContext().getResources().getStringArray(resId);
 	}
 
-	@Deprecated
-	public void showDumyToast(String msg) {
-		Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
-	}
-
-	public void showSmallToast(String msg) {
+	// Shows Quick Toast
+	protected void showSmallToast(String msg) {
 		Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
 	}
 
-	public void showLongToast(String msg) {
+	// Shows Long Toast
+	protected void showLongToast(String msg) {
 		Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
 	}
 
-	public boolean isInLandscapemode() {
+	// Returns true if the device is in landscape mode
+	protected boolean isInLandscapemode() {
 		int orientation = getResources().getConfiguration().orientation;
 		if (orientation == Configuration.ORIENTATION_LANDSCAPE) 
 			return true;
@@ -60,37 +137,45 @@ public class BaseActivity extends Activity {
 			return false;
 	}
 
-	public LayoutParams setLayoutParamsToMatchParent() {
+	// Return Layoutparams which can be used to set a view to matchparent
+	protected LayoutParams getMatchParentLayoutParams() {
 		return new LayoutParams(LayoutParams.MATCH_PARENT,
 								LayoutParams.MATCH_PARENT);
 	}
 
-	public LayoutParams setLayoutParamsToWrapContent() {
+	// Return Layoutparams which can be used to set a view to wrapcontent
+	protected LayoutParams getWrapContentLayoutParams() {
 		return new LayoutParams(LayoutParams.WRAP_CONTENT,
 								LayoutParams.WRAP_CONTENT);
 	}
 
-	public boolean hasCrashedLastTime() {
-		Process process;
-		return new File(CRASH_FILE_PATH).exists();
+	// Returns true if app has crashed last time
+	protected boolean hasCrashedLastTime() {
+		return !(PreferenceManager
+			.getDefaultSharedPreferences(this)
+			.getBoolean(KEY_CRASH_REPORT, true));
 	}
+	
+	/*
+	 *	Private Methods
+	 */
+	private void setCrashReport() {
 
-	public String getCrashReport() {
 		if (!hasCrashedLastTime())
-			return null;
+			return;
 		else {
-			File file = new File(CRASH_FILE_PATH);
 			try {
-				BufferedReader br = new BufferedReader(new FileReader(file));
-				String buffer;
-				String crashReport = "";
-				while ((buffer = br.readLine()) != null) {
-					crashReport += "\n" + buffer;
-				}
-				showLongToast(crashReport);
+				new FileOutputStream(PATH_TO_CRASH_REPORT_FILE)
+					.write(terminal("logcat", "-d").getBytes());
 			} catch (FileNotFoundException e) {} catch (IOException e) {}
-
 		}
-		return null;
 	}
+
+	private void savePreferences(String key, boolean value) {
+		PreferenceManager
+			.getDefaultSharedPreferences(this)
+			.edit().putBoolean(key, value)
+			.commit();
+	}
+
 }
