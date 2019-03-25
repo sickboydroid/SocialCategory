@@ -34,16 +34,16 @@
 	<color name="tumler_dark_blue">#00142b</color>
 	
 	<!--Other Social media colors-->
-	<color name="nine_gag">#3C5A99</color>
-	<color name="badoo">#3C5A99</color>
-	<color name="dailymotion">#3C5A99</color>
-	<color name="digg">#3C5A99</color>
-	<color name="flicker">#3C5A99</color>
-	<color name="linkedin">#3C5A99</color>
-	<color name="meetup">#3C5A99</color>
-	<color name="mylife">#3C5A99</color>
-	<color name="myspace">#3C5A99</color>
-	<color name="qzone">#3C5A99</color>
-	<color name="stumbleupon">#3C5A99</color>
+	<color name="nine_gag_black">#000000</color>
+	<color name="badoo_blue">#7000e3</color>
+	<color name="dailymotion_light_blue">#00adfd</color>
+	<color name="digg_black">#1b1a19</color>
+	<color name="flickr_black_brown">#202123</color>
+	<color name="linkedin_blue">#0083bf</color>
+	<color name="meetup_rose_red">#f64060</color>
+	<color name="mylife_green">#2c9f3c</color>
+	<color name="myspace_sky_blue">#008dde</color>
+	<color name="qzone_blue">#146fdf</color>
+	<color name="stumbleupon_orange">#ff8226</color>
 	
 </resources>

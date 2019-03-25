@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.Gravity;
@@ -19,7 +20,12 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import com.androandiron.socialcategory.R;
 import com.androandiron.socialcategory.UI.BaseActivity;
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class MainActivity extends BaseActivity {
 	final Context context = this;
@@ -226,7 +232,7 @@ public class MainActivity extends BaseActivity {
 		R.string.badoo,
 		R.string.dailymotion,
 		R.string.digg,
-		R.string.flicker,
+		R.string.flickr,
 		R.string.linkedin,
 		R.string.meetup,
 		R.string.my_life,
@@ -241,6 +247,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View view) { // Nine gag
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.nine_gag_black);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.9gag.com");
+				startActivity(intent);
 			}
 		},
 
@@ -248,6 +258,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View view) { // Badoo
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.badoo_blue);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.badoo.com");
+				startActivity(intent);
 			}
 		},
 
@@ -255,7 +269,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View view) { // Dailymotion
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.dailymotion_light_blue);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.dailymotion.com");
+				startActivity(intent);
 			}
 		},
 
@@ -263,7 +280,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View view) { // Digg
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.digg_black);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.digg.com");
+				startActivity(intent);
 			}
 		},
 
@@ -271,7 +291,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View view) { // Flicker
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.flickr_black_brown);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.flickr.com");
+				startActivity(intent);
 			}
 		},
 
@@ -279,7 +302,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View view) { // Linkedin
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.linkedin_blue);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.linkedin.com");
+				startActivity(intent);
 			}
 		},
 
@@ -287,7 +313,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View view) { // Meetup
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.meetup_rose_red);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.meetup.com");
+				startActivity(intent);
 			}
 		},
 
@@ -295,7 +324,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View view) { // MyLife
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.mylife_green);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.mylife.com");
+				startActivity(intent);
 			}
 		},
 
@@ -303,7 +335,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View view) { // MySpace
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.myspace_sky_blue);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.myspace.com");
+				startActivity(intent);
 			}
 		},
 
@@ -311,7 +346,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View view) { // Qzone
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.qzone_blue);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.qzone.com");
+				startActivity(intent);
 			}
 		},
 
@@ -319,7 +357,10 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View view) { // Stumbleupon
-				// TODO: Implement this method
+				Intent intent = new Intent(MainActivity.this, SocialMediaWebSiteOpener.class);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_RES_ID_STATUS_BAR_COLOR, R.color.stumbleupon_orange);
+				intent.putExtra(SocialMediaWebSiteOpener.KEY_URL_OF_SOCIAL_MEDIA, "www.stumbleupon.com");
+				startActivity(intent);
 			}
 		}
 
@@ -330,11 +371,29 @@ public class MainActivity extends BaseActivity {
 		// Setting crash view if app crashed last time
 		if (hasCrashedLastTime()) {
 			super.onCreate(savedInstanceState);
+			getActionBar().hide();
 			setContentView(R.layout.layout_crash);
+			File file = new File(getLogFilePath());
+			try {
+				BufferedReader br = new BufferedReader(new FileReader(file));
+				String line = "";
+				String fullFile = "";
+				while((line = br.readLine()) != null)
+					fullFile = line + "\n";
+				br.close();
+				TextView tv = findViewById(R.id.layout_crashTextView);
+				tv.setText(fullFile);
+			} catch (FileNotFoundException e) {}
+			catch(IOException e){}
 			return;
 		}
 
 		super.onCreate(savedInstanceState);
+
+		Spannable text = new SpannableString(getActionBar().getTitle());
+		text.setSpan(new ForegroundColorSpan(Color.WHITE), 0, text.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+		getActionBar().setTitle(text);
+
 		// Creating main layout (ScrollView)
 		ScrollView mainLayoutScrollView = new ScrollView(context);
 
@@ -354,7 +413,7 @@ public class MainActivity extends BaseActivity {
 
 		// Setting content view
 		setContentView(mainLayoutScrollView);
-		
+
 	}
 
 	@Override
