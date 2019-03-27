@@ -379,7 +379,7 @@ public class MainActivity extends BaseActivity {
 				String line = "";
 				String fullFile = "";
 				while((line = br.readLine()) != null)
-					fullFile = line + "\n";
+					fullFile += line + "\n";
 				br.close();
 				TextView tv = findViewById(R.id.layout_crashTextView);
 				tv.setText(fullFile);
@@ -390,10 +390,10 @@ public class MainActivity extends BaseActivity {
 
 		super.onCreate(savedInstanceState);
 
-		Spannable text = new SpannableString(getActionBar().getTitle());
-		text.setSpan(new ForegroundColorSpan(Color.WHITE), 0, text.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-		getActionBar().setTitle(text);
-
+//		Spannable text = new SpannableString(getActionBar().getTitle());
+//		text.setSpan(new ForegroundColorSpan(Color.WHITE), 0, text.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+//		getActionBar().setTitle(text);
+//
 		// Creating main layout (ScrollView)
 		ScrollView mainLayoutScrollView = new ScrollView(context);
 
@@ -416,32 +416,32 @@ public class MainActivity extends BaseActivity {
 
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.menu_activity_main, menu);
-
-		// Changing color of menu item
-		int positionOfMenuItem = 0; // or whatever...
-		MenuItem item = menu.getItem(positionOfMenuItem);
-		SpannableString s = new SpannableString(getString(R.string.about));
-		s.setSpan(new ForegroundColorSpan(Color.BLACK), 0, s.length(), 0);
-		item.setTitle(s);
-		return super.onCreateOptionsMenu(menu);
-	}
-
-	@Override
-	public boolean onMenuItemSelected(int featureId , MenuItem item) {
-		if (item.getItemId() == R.id.about) {
-			TextView tvAbout = new TextView(context);
-			tvAbout.setLayoutParams(getMatchParentLayoutParams());
-			tvAbout.setGravity(Gravity.CENTER);
-			tvAbout.setTypeface(Typeface.SANS_SERIF, Typeface.BOLD_ITALIC);
-			tvAbout.setText(R.string.about);
-			setContentView(tvAbout);
-		}
-		return super.onMenuItemSelected(featureId, item);
-	}
-
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		getMenuInflater().inflate(R.menu.menu_activity_main, menu);
+//
+//		// Changing color of menu item
+//		int positionOfMenuItem = 0; // or whatever...
+//		MenuItem item = menu.getItem(positionOfMenuItem);
+//		SpannableString s = new SpannableString(getString(R.string.about));
+//		s.setSpan(new ForegroundColorSpan(Color.BLACK), 0, s.length(), 0);
+//		item.setTitle(s);
+//		return super.onCreateOptionsMenu(menu);
+//	}
+//
+//	@Override
+//	public boolean onMenuItemSelected(int featureId , MenuItem item) {
+//		if (item.getItemId() == R.id.about) {
+//			TextView tvAbout = new TextView(context);
+//			tvAbout.setLayoutParams(getMatchParentLayoutParams());
+//			tvAbout.setGravity(Gravity.CENTER);
+//			tvAbout.setTypeface(Typeface.SANS_SERIF, Typeface.BOLD_ITALIC);
+//			tvAbout.setText(R.string.about);
+//			setContentView(tvAbout);
+//		}
+//		return super.onMenuItemSelected(featureId, item);
+//	}
+//
 	// Creates single block with title
 	public View createSingleBlock(LinearLayout mainColumnHandlerLinearLayout, String blockTitle, final int[] RES_ID_OF_IMAGES, final int[] RES_ID_OF_NAMES, final OnClickListener[] ON_CLICK_LISTENERS) {
 		int noOfViewsInRow = 2; // Stores no. of views that should be created in row (Based on device and orientation)
@@ -556,7 +556,6 @@ public class MainActivity extends BaseActivity {
 		blockTitleTextView.setBackgroundResource(R.drawable.rounded_corners_bottom_right_bottom_left);
 
 		// Styling texttive title
-		blockTitleTextView.setTextColor(getColor(R.color.black));
 		blockTitleTextView.setTypeface(blockTitleTextView.getTypeface(), Typeface.BOLD);
 
 		// Setting title to textView
