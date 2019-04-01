@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Social Category</string>
-	
+
 	<!--Menus-->
 	<string name="about">About</string>
 	<string name="about_app">Developed By: AndroAndiron\nPublish Date:\nEmail:\nWebsite:\n\n\n\nCurrent Version:</string>
@@ -37,4 +37,10 @@
 	<string name="qzone">Qzone</string>
 	<string name="stumbleupon">StumbleUpon</string>
 
+	<!--	alert dialogs     -->
+	<string name="alert_dialog_no_internet_connection_title">No Internet Connection!</string>
+	<string name="alert_dialog_no_internet_connection_description">Please connect to the internet!</string>
+	<string name="alert_dialog_no_internet_connection_positive_button_1st">Cellular Settings</string>
+	<string name="alert_dialog_no_internet_connection_positive_button_2nd">WIFI Settings</string>
+	<string name="alert_dialog_no_internet_connection_negative_button">Leave</string>
 </resources>

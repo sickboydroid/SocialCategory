@@ -378,22 +378,17 @@ public class MainActivity extends BaseActivity {
 				BufferedReader br = new BufferedReader(new FileReader(file));
 				String line = "";
 				String fullFile = "";
-				while((line = br.readLine()) != null)
+				while ((line = br.readLine()) != null)
 					fullFile += line + "\n";
 				br.close();
 				TextView tv = findViewById(R.id.layout_crashTextView);
 				tv.setText(fullFile);
-			} catch (FileNotFoundException e) {}
-			catch(IOException e){}
+			} catch (FileNotFoundException e) {} catch (IOException e) {}
 			return;
 		}
 
 		super.onCreate(savedInstanceState);
 
-//		Spannable text = new SpannableString(getActionBar().getTitle());
-//		text.setSpan(new ForegroundColorSpan(Color.WHITE), 0, text.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-//		getActionBar().setTitle(text);
-//
 		// Creating main layout (ScrollView)
 		ScrollView mainLayoutScrollView = new ScrollView(context);
 

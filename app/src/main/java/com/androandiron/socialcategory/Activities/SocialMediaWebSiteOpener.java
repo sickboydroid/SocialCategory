@@ -1,7 +1,9 @@
 package com.androandiron.socialcategory.Activities;
 import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -9,6 +11,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,6 +22,7 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import com.androandiron.socialcategory.R;
 import com.androandiron.socialcategory.UI.BaseActivity;
+import android.content.ActivityNotFoundException;
 
 public class SocialMediaWebSiteOpener extends BaseActivity {
 	Context context = this;
@@ -34,21 +38,46 @@ public class SocialMediaWebSiteOpener extends BaseActivity {
 		super.onCreate(savedInstanceState);
 
 		if (isNetworkAvailable()) {
-			showSmallToast("yes");
 			new AlertDialog.Builder(context)
-				.setTitle("Delete entry")
-				.setMessage("Are you sure you want to delete this entry?")
+				.setTitle(getString(R.string.alert_dialog_no_internet_connection_title))
+				.setMessage(getString(R.string.alert_dialog_no_internet_connection_description))
 
-				// Specifying a listener allows you to take an action before dismissing the dialog.
-				// The dialog is automatically dismissed when a dialog button is clicked.
-				.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+				// Setting up onClick listeners
+
+				.setPositiveButton(R.string.alert_dialog_no_internet_connection_positive_button_1st, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) { 
-						// Continue with delete operation
+						// Continue with Cellular settings
+						if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
+							startActivity(new Intent(
+											  Settings.ACTION_WIRELESS_SETTINGS));
+						else {
+							try {
+								Intent intent = new Intent();
+								intent.setComponent(new ComponentName("com.android.settings", "com.android.settings.Settings$DataUsageSummaryActivity"));
+								startActivity(intent);
+
+							} catch (ActivityNotFoundException e) {
+								startActivity(new Intent(
+												  Settings.ACTION_WIRELESS_SETTINGS));
+							}
+						}
 					}
 				})
 
-				// A null listener allows the button to dismiss the dialog and take no further action.
-				.setNegativeButton(android.R.string.no, null)
+				.setNeutralButton(R.string.alert_dialog_no_internet_connection_negative_button, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) { 
+						// Leave activity
+						finish();
+					}
+				})
+
+				.setNegativeButton(R.string.alert_dialog_no_internet_connection_positive_button_2nd, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) { 
+						// Continue with WIFI settings
+						startActivity(new Intent(
+										  Settings.ACTION_WIFI_SETTINGS));
+					}
+				})
 				.show();		
 		} else {
 			showLongToast("no");
