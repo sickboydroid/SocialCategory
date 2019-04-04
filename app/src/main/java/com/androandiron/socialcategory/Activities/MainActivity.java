@@ -44,7 +44,7 @@ public class MainActivity extends BaseActivity {
 		R.drawable.img_github,
 		R.drawable.img_pinterest,
 		R.drawable.img_reddit,
-		R.drawable.img_tumler
+		R.drawable.img_tumblr
 	};
 
 	// Names of Popular social media websites
@@ -389,25 +389,8 @@ public class MainActivity extends BaseActivity {
 
 		super.onCreate(savedInstanceState);
 
-		// Creating main layout (ScrollView)
-		ScrollView mainLayoutScrollView = new ScrollView(context);
-
-		// Creating LinearLayout for single column (OneColumn = LinearLayout + RelativeLayout)
-		LinearLayout mainColumnHandlerLinearLayout = new LinearLayout(context);
-
-		// Setting layout params two above two
-		mainLayoutScrollView.setLayoutParams(getMatchParentLayoutParams());
-		mainColumnHandlerLinearLayout.setLayoutParams(getMatchParentLayoutParams());
-
-		// Adding main linearlayout to root layout (Scrollview)
-		mainLayoutScrollView.addView(mainColumnHandlerLinearLayout);
-
-		// Creating blocks
-		mainColumnHandlerLinearLayout = (LinearLayout) createSingleBlock(mainColumnHandlerLinearLayout, getString(R.string.popular_social_media), IMAGES_OF_POPULAR_SOCIAL_MEDIA, NAMES_OF_POPULAR_SOCIAL_MEDIA, ON_CLICK_LISTENERS_FOR_POPULAR_SOCIAL_MEDIA);
-		mainColumnHandlerLinearLayout = (LinearLayout) createSingleBlock(mainColumnHandlerLinearLayout, getString(R.string.other_social_media) , IMAGES_OF_OTHER_SOCIAL_MEDIA, NAMES_OF_OTHER_SOCIAL_MEDIA, ON_CLICK_LISTENERS_FOR_OTHER_SOCIAL_MEDIA);
-
 		// Setting content view
-		setContentView(mainLayoutScrollView);
+		setContentView(R.layout.activity_main);
 
 	}
 
@@ -443,8 +426,9 @@ public class MainActivity extends BaseActivity {
 		int noOfViewsCreated = 0; // Stores no. of views created in rows
 
 		// Checking for device (Tablet or Smartphone) for setting no of rows in one column
-		if (isTablet()) {
-			// It is tablet
+		if (isSmallTablet()) {
+			showSmallToast("small Tablet");
+			// It is small (7'') tablet
 
 			if (isInLandscapemode())
 			// It is in Landscape mode
@@ -453,8 +437,34 @@ public class MainActivity extends BaseActivity {
 			else
 			// It is in Potrait mode
 				noOfViewsInRow = 4;
-		} else {
-			// It is SmartPhone
+
+		}if (isLargeTablet()) {
+			showSmallToast("large Tablet");
+			// It is large (10'') tablet
+
+			if (isInLandscapemode())
+			// It is in Landscape mode
+				noOfViewsInRow = 6;
+
+			else
+			// It is in Potrait mode
+				noOfViewsInRow = 5;
+
+		} else if (isSmallSmartphone()) {
+			showSmallToast("small");
+			// It is small SmartPhone
+
+			if (isInLandscapemode())
+			// It is in Landscape mode
+				noOfViewsInRow = 3;
+
+			else
+			// It is in Potrait mode
+				noOfViewsInRow = 2;
+
+		} else if (isLargeSmartphone()) {
+			showSmallToast("big");
+			// It is large SmartPhone
 
 			if (isInLandscapemode())
 			// It is in Landscape mode
@@ -464,7 +474,28 @@ public class MainActivity extends BaseActivity {
 			// It is in Potrait mode
 				noOfViewsInRow = 3;
 		}
-
+//		if (isTablet()) {
+//			// It is tablet
+//
+//			if (isInLandscapemode())
+//			// It is in Landscape mode
+//				noOfViewsInRow = 5;
+//
+//			else
+//			// It is in Potrait mode
+//				noOfViewsInRow = 4;
+//		} else {
+//			// It is SmartPhone
+//
+//			if (isInLandscapemode())
+//			// It is in Landscape mode
+//				noOfViewsInRow = 4;
+//
+//			else
+//			// It is in Potrait mode
+//				noOfViewsInRow = 3;
+//		}
+//
 
 		// Setting orientation of LinearLayout
 		mainColumnHandlerLinearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -564,9 +595,52 @@ public class MainActivity extends BaseActivity {
 		return blockTitleLinearLayout;
 	}
 
-	// Checks device (Tablet =< 600dp && Smartphone => 600dp)
-	private boolean isTablet() {
-		return context.getResources().getBoolean(R.bool.isTablet);
+	// Checks device
+	private boolean isSmallTablet() {
+		return context.getResources().getBoolean(R.bool.isSmallTablet);
 	}
 
+	// Checks device
+	private boolean isLargeTablet() {
+		return context.getResources().getBoolean(R.bool.isBigSmartphone);
+	}
+	// Checks device
+	private boolean isSmallSmartphone() {
+		return context.getResources().getBoolean(R.bool.isSmallSmartphone);
+	}
+	// Checks device
+	private boolean isLargeSmartphone() {
+		return context.getResources().getBoolean(R.bool.isBigSmartphone);
+	}
+
+	public void facebook(View view) {}
+
+	public void netflix(View view) {}
+
+	public void youtube(View view) {}
+
+	public void snapchat(View view) {}
+
+	public void twitter(View view) {}
+
+	public void instagram(View view) {}
+
+	public void quora(View view) {}
+
+	public void stackoverflow(View view) {}
+
+	public void pinterest(View view) {}
+
+	public void reddit(View view) {}
+
+	public void github(View view) {}
+
+	public void tumler(View view) {}
+
+	/*
+	 R.drawable.img_github,
+	 R.drawable.img_pinterest,
+	 R.drawable.img_reddit,
+	 R.drawable.img_tumler
+	 */
 }

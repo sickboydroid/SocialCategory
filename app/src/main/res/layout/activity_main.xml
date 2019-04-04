@@ -1,8 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:gravity="center">
+	android:padding="1dp">
 
-</LinearLayout>
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<!--< Block Title (Popular Social Media) >-->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingTop="1dp"
+			android:weightSum="2">
+
+			<View
+				android:layout_width="0dp"
+				android:layout_height="3dp"
+				android:layout_weight="1"
+				android:background="@color/black"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@drawable/rounded_corners_bottom_right_bottom_left"
+				android:text="@string/popular_social_media"
+				android:textColor="@color/black"
+				android:textStyle="bold"/>
+
+			<View
+				android:layout_width="0dp"
+				android:layout_height="3dp"
+				android:layout_weight="1"
+				android:background="@color/black"/>
+
+		</LinearLayout>
+
+		<!--< First block (Popular Social Media) >-->
+		<TableLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:stretchColumns="*">
+
+			<!--< First Row >-->
+			<TableRow
+				android:layout_marginBottom="15dp">
+				<include layout="@layout/layout_facebook"/>
+
+				<include layout="@layout/layout_netflix"/>
+			</TableRow>
+	
+			<!--< 2nd Row >-->
+			<TableRow
+				android:layout_marginBottom="15dp">
+				<include layout="@layout/layout_youtube"/>
+
+				<include layout="@layout/layout_snapchat"/>
+			</TableRow>
+		
+			<!--< 3rd Row >-->
+			<TableRow
+				android:layout_marginBottom="15dp">
+				<include layout="@layout/layout_instagram"/>
+
+				<include layout="@layout/layout_twitter"/>
+			</TableRow>
+			
+			<!--< 4th Row >-->
+			<TableRow
+				android:layout_marginBottom="15dp">
+				<include layout="@layout/layout_googleplus"/>
+
+				<include layout="@layout/layout_pinterest"/>
+			</TableRow>
+		
+			<!--< 5th Row >-->
+			<TableRow
+				android:layout_marginBottom="15dp">
+				<include layout="@layout/layout_reddit"/>
+
+				<include layout="@layout/layout_github"/>
+			</TableRow>
+			
+			<!--< 6th Row >-->
+			<TableRow
+				android:layout_marginBottom="15dp"
+				android:gravity="center">
+				<include layout="@layout/layout_tumler"/>
+
+			</TableRow>
+			
+		</TableLayout>
+
+	</LinearLayout>
+
+</ScrollView>	
