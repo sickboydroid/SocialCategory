@@ -88,12 +88,96 @@
 			<TableRow
 				android:layout_marginBottom="15dp"
 				android:gravity="center">
-				<include layout="@layout/layout_tumler"/>
+				<include layout="@layout/layout_tumblr"/>
 
 			</TableRow>
 			
 		</TableLayout>
 
+		<!--< Block Title (Other Social Media) >-->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingTop="1dp"
+			android:weightSum="2">
+
+			<View
+				android:layout_width="0dp"
+				android:layout_height="3dp"
+				android:layout_weight="1"
+				android:background="@color/black"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@drawable/rounded_corners_bottom_right_bottom_left"
+				android:text="@string/other_social_media"
+				android:textColor="@color/black"
+				android:textStyle="bold"/>
+
+			<View
+				android:layout_width="0dp"
+				android:layout_height="3dp"
+				android:layout_weight="1"
+				android:background="@color/black"/>
+
+		</LinearLayout>
+		
+		<!--< Second block (Other Social Media) >-->
+		<TableLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:stretchColumns="*">
+
+			<!--< First Row >-->
+			<TableRow
+				android:layout_marginBottom="15dp">
+				<include layout="@layout/layout_ninegag"/>
+
+				<include layout="@layout/layout_badoo"/>
+			</TableRow>
+
+			<!--< 2nd Row >-->
+			<TableRow
+				android:layout_marginBottom="15dp">
+				<include layout="@layout/layout_dailymotion"/>
+
+				<include layout="@layout/layout_digg"/>
+			</TableRow>
+
+			<!--< 3rd Row >-->
+			<TableRow
+				android:layout_marginBottom="15dp">
+				<include layout="@layout/layout_flickr"/>
+
+				<include layout="@layout/layout_linkedin"/>
+			</TableRow>
+
+			<!--< 4th Row >-->
+			<TableRow
+				android:layout_marginBottom="15dp">
+				<include layout="@layout/layout_meetup"/>
+
+				<include layout="@layout/layout_my_life"/>
+			</TableRow>
+
+			<!--< 5th Row >-->
+			<TableRow
+				android:layout_marginBottom="15dp">
+				<include layout="@layout/layout_my_space"/>
+
+				<include layout="@layout/layout_qzone"/>
+			</TableRow>
+
+			<!--< 6th Row >-->
+			<TableRow
+				android:layout_marginBottom="15dp"
+				android:gravity="center">
+				<include layout="@layout/layout_stumbleupon"/>
+
+			</TableRow>
+
+		</TableLayout>
 	</LinearLayout>
 
 </ScrollView>	

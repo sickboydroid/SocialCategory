@@ -7,8 +7,8 @@
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
 		android:background="@drawable/selected_view"
-		android:src="@drawable/img_google_plus"
-		android:onClick="googlePlus"
+		android:src="@drawable/img_badoo"
+		android:onClick="badoo"
 		android:padding="2dp"/>
 
 	<TextView
@@ -18,9 +18,9 @@
 		android:clickable="true"
 		android:textColor="@color/black"
 		android:textSize="16sp"
-		android:text="@string/google_plus"
+		android:text="@string/badoo"
 		android:typeface="sans"
-		android:onClick="googlePlus"/>
+		android:onClick="badoo"/>
 
 </LinearLayout>
 

@@ -217,7 +217,6 @@ public class MainActivity extends BaseActivity {
 		R.drawable.img_badoo,
 		R.drawable.img_dailymotion,
 		R.drawable.img_digg,
-		R.drawable.img_flicker,
 		R.drawable.img_linkedin,
 		R.drawable.img_meetup,
 		R.drawable.img_my_life,
@@ -635,12 +634,27 @@ public class MainActivity extends BaseActivity {
 
 	public void github(View view) {}
 
-	public void tumler(View view) {}
+	public void tumblr(View view) {}
 
-	/*
-	 R.drawable.img_github,
-	 R.drawable.img_pinterest,
-	 R.drawable.img_reddit,
-	 R.drawable.img_tumler
-	 */
+	public void ninegag(View view) {}
+
+	public void badoo(View view) {}
+
+	public void dailymotion(View view) {}
+
+	public void digg(View view) {}
+
+	public void flickr(View view) {}
+
+	public void linkedin(View view) {}
+
+	public void meetup(View view) {}
+
+	public void myLife(View view) {}
+
+	public void mySpace(View view) {}
+
+	public void qzone(View view) {}
+
+	public void stumbleupon(View view) {}
 }
