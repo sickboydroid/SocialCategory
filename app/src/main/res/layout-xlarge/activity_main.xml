@@ -52,42 +52,34 @@
 				<include layout="@layout/layout_instagram"/>
 
 				<include layout="@layout/layout_youtube"/>
+
+				<include layout="@layout/layout_twitter"/>
+
+				<include layout="@layout/layout_netflix"/>
 			</TableRow>
 
 			<!--< 2nd Row >-->
 			<TableRow
 				android:layout_marginBottom="15dp">
-				<include layout="@layout/layout_twitter"/>
-
-				<include layout="@layout/layout_netflix"/>
-
 				<include layout="@layout/layout_snapchat"/>
-			</TableRow>
 
-			<!--< 3rd Row >-->
-			<TableRow
-				android:layout_marginBottom="15dp">
 				<include layout="@layout/layout_googleplus"/>
 
 				<include layout="@layout/layout_github"/>
 
 				<include layout="@layout/layout_stackoverflow"/>
-			</TableRow>
 
-			<!--< 4th Row >-->
-			<TableRow
-				android:layout_marginBottom="15dp">
 				<include layout="@layout/layout_quora"/>
-
-				<include layout="@layout/layout_reddit"/>
-
-				<include layout="@layout/layout_pinterest"/>
 			</TableRow>
 
-			<!--< 5th Row >-->
+			<!--< 3rd Row >-->
 			<TableRow
 				android:layout_marginBottom="15dp"
 				android:gravity="center">
+				<include layout="@layout/layout_reddit"/>
+
+				<include layout="@layout/layout_pinterest"/>
+
 				<include layout="@layout/layout_tumblr"/>
 			</TableRow>
 
@@ -136,34 +128,30 @@
 				<include layout="@layout/layout_badoo"/>
 
 				<include layout="@layout/layout_dailymotion"/>
+
+				<include layout="@layout/layout_digg"/>
+
+				<include layout="@layout/layout_flickr"/>
 			</TableRow>
 
 			<!--< 2nd Row >-->
 			<TableRow
 				android:layout_marginBottom="15dp">
-				<include layout="@layout/layout_digg"/>
-
-				<include layout="@layout/layout_flickr"/>
-
 				<include layout="@layout/layout_ninegag"/>
-			</TableRow>
 
-			<!--< 3rd Row >-->
-			<TableRow
-				android:layout_marginBottom="15dp">
 				<include layout="@layout/layout_meetup"/>
 
 				<include layout="@layout/layout_my_life"/>
 
 				<include layout="@layout/layout_my_space"/>
+
+				<include layout="@layout/layout_qzone"/>
 			</TableRow>
 
-			<!--< 4th Row >-->
+			<!--< 3rd Row >-->
 			<TableRow
 				android:layout_marginBottom="15dp"
 				android:gravity="center">
-				<include layout="@layout/layout_qzone"/>
-
 				<include layout="@layout/layout_stumbleupon"/>
 			</TableRow>
 

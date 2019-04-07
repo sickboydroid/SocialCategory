@@ -620,6 +620,8 @@ public class MainActivity extends BaseActivity {
 
 	public void snapchat(View view) {}
 
+	public void googlePlus(View view) {}
+	
 	public void twitter(View view) {}
 
 	public void instagram(View view) {}
