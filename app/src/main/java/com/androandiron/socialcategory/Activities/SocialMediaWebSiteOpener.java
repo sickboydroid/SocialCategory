@@ -1,17 +1,13 @@
 package com.androandiron.socialcategory.Activities;
-import android.app.AlertDialog;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -22,12 +18,15 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import com.androandiron.socialcategory.R;
 import com.androandiron.socialcategory.UI.BaseActivity;
-import android.content.ActivityNotFoundException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class SocialMediaWebSiteOpener extends BaseActivity {
 	Context context = this;
 
 	WebView mWebView = null;
+
+	String mHOST;
 
 	// Keys
 	public static final String KEY_RES_ID_STATUS_BAR_COLOR = "ksjd34kj3k4jk4jkj3_keyStatusBarColor";
@@ -37,52 +36,6 @@ public class SocialMediaWebSiteOpener extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		if (isNetworkAvailable()) {
-			new AlertDialog.Builder(context)
-				.setTitle(getString(R.string.alert_dialog_no_internet_connection_title))
-				.setMessage(getString(R.string.alert_dialog_no_internet_connection_description))
-
-				// Setting up onClick listeners
-
-				.setPositiveButton(R.string.alert_dialog_no_internet_connection_positive_button_1st, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) { 
-						// Continue with Cellular settings
-						if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
-							startActivity(new Intent(
-											  Settings.ACTION_WIRELESS_SETTINGS));
-						else {
-							try {
-								Intent intent = new Intent();
-								intent.setComponent(new ComponentName("com.android.settings", "com.android.settings.Settings$DataUsageSummaryActivity"));
-								startActivity(intent);
-
-							} catch (ActivityNotFoundException e) {
-								startActivity(new Intent(
-												  Settings.ACTION_WIRELESS_SETTINGS));
-							}
-						}
-					}
-				})
-
-				.setNeutralButton(R.string.alert_dialog_no_internet_connection_negative_button, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) { 
-						// Leave activity
-						finish();
-					}
-				})
-
-				.setNegativeButton(R.string.alert_dialog_no_internet_connection_positive_button_2nd, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) { 
-						// Continue with WIFI settings
-						startActivity(new Intent(
-										  Settings.ACTION_WIFI_SETTINGS));
-					}
-				})
-				.show();		
-		} else {
-			showLongToast("no");
-			super.finish();
-		}
 		// Getting and setting data
 		String url = getIntent().getStringExtra(KEY_URL_OF_SOCIAL_MEDIA);
 		if (!url.startsWith("http://"))
@@ -91,6 +44,12 @@ public class SocialMediaWebSiteOpener extends BaseActivity {
 																	R.color.primaryDarkColor));
 		setStatusBarColor(color);
 
+		// Setting host
+		try {
+			setHOST(new URL(url).getHost());
+		} catch (MalformedURLException e) {
+			setHOST(null);
+		}
 		// Setting layout
 		setContentView(R.layout.activity_social_media_website_opener);
 
@@ -101,8 +60,6 @@ public class SocialMediaWebSiteOpener extends BaseActivity {
 
 	// Sets webView for first time
 	public WebView setUpWebView(final ProgressBar progressBar, int color) {
-//		progressBar.setVisibility(View.GONE);
-
 		// getting webView
 		WebView webView = findViewById(R.id.activity_social_media_website_openercom_androandiron_socialcategory_Views_CustomWebViewForSocialMediaWebSites);
 
@@ -115,41 +72,28 @@ public class SocialMediaWebSiteOpener extends BaseActivity {
 			progressBar.setProgressDrawable(progressDrawable);
 		}
 
-		// Adjusting webView
-//		webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-		webView.setFocusable(true);
-		webView.setFocusableInTouchMode(true);
-
 		// Some optimal settings for android webview
 		WebSettings settings = webView.getSettings();
 		settings.setJavaScriptEnabled(true);
-		settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
-		settings.setDatabaseEnabled(true);
-		settings.setDatabasePath("/data/data/" + getPackageName() + "/databases/");
-		settings.setJavaScriptCanOpenWindowsAutomatically(true);
-//		settings.setSupportMultipleWindows(true);
-//		settings.setBuiltInZoomControls(true);
-		settings.setSaveFormData(false);
-		settings.setSavePassword(false);
-//		settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
-
-		// Flash settings
-		settings.setPluginState(WebSettings.PluginState.ON);
-
-		// Geo location settings
-		settings.setGeolocationEnabled(true);
-		settings.setGeolocationDatabasePath("/data/data/selendroid");
-
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-			// chromium, enable hardware acceleration
-			webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-		} else {
-			// older android version, disable hardware acceleration
-			webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-		}
+		//settings.setUserAgentString("Android");
 
 		// Setting webclient for loading all links inside app
-		webView.setWebViewClient(new WebViewClient());
+		webView.setWebViewClient(new WebViewClient(){
+			@Override
+			public boolean shouldOverrideUrlLoading(WebView view, String url){
+				try {
+					if(hasHost())
+						showSmallToast("yes");
+					showSmallToast(new URL(url).getHost() + "\n" + getHOST());
+					if (new URL(url).getHost().equals(getHOST()))
+						view.loadUrl(url);
+					else
+						showSmallToast("iNAVLIDE URL");
+				} catch (MalformedURLException e) {}
+				return super.shouldOverrideUrlLoading(view, url);
+			}
+		});
+
 
 		// Setting chrome client for getting to know progress of page in numeric
 		webView.setWebChromeClient(new WebChromeClient(){
@@ -159,12 +103,10 @@ public class SocialMediaWebSiteOpener extends BaseActivity {
 					if (progress >= 100) {
 						// Page finished
 						progressBar.setVisibility(View.GONE);
-						view.invalidate();
 					} else {
 						// Page is loading
 						if (progressBar.getVisibility() == View.GONE) {
-							//progressBar.setVisibility(View.VISIBLE);
-							view.invalidate();
+							progressBar.setVisibility(View.VISIBLE);
 						}
 
 						progressBar.setProgress(progress);
@@ -205,6 +147,18 @@ public class SocialMediaWebSiteOpener extends BaseActivity {
 		NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
 		return activeNetworkInfo != null
 			&& activeNetworkInfo.isConnected();
+	}
+
+	public boolean hasHost() {
+		return mHOST != null;
+	}
+
+	public void setHOST(String HOST) {
+		mHOST = HOST;
+	}
+
+	public String getHOST() {
+		return mHOST;
 	}
 
 }

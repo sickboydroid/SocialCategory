@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-	<bool name="isSmallTablet">false</bool>
-	<bool name="isBigTablet">true</bool>
-	<bool name="isSmallSmartphone">false</bool>
-	<bool name="isBigSmartphone">false</bool>
-</resources>
