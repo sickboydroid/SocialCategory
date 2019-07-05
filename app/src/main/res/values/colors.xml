@@ -1,43 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="primaryColor">#004d40</color>
-	<color name="primaryLightColor">#39796b</color>
-	<color name="primaryDarkColor">#00251a</color>
-	<color name="colorAccent">#009688</color>
-	<color name="primaryTextColor">#EFEFEF</color>
-	<color name="secondaryTextColor">#6A6A6A</color>
-	
-	<color name="transparent">@android:color/transparent</color>
-	<color name="black">@android:color/black</color>
-	<color name="white">@android:color/white</color>
-	<color name="blue_bright">@android:color/holo_blue_bright</color>
-	
-	<!--Popular social media colors-->
-	<color name="facebook_blue">#3C5A99</color>
-	<color name="netflix_red">#e50914</color>
-	<color name="youtube_red">#e62117</color>
-	<color name="snapchat_yellow">#fffc00</color>
-	<color name="instagram_light_blue">#3897f0</color>
-	<color name="google_plus_pink">#db4437</color>
-	<color name="twitter_blue">#1da1f2</color>
-	<color name="stackoverflow_orange">#f48126</color>
-	<color name="quora_red">#b92b27</color>
-	<color name="github_black">#24292e</color>
-	<color name="pinterest_red">#e60023</color>
-	<color name="reddit_orange">#ff4500</color>
-	<color name="tumblr_dark_blue">#00142b</color>
-	
-	<!--Other Social media colors-->
-	<color name="nine_gag_black">#000000</color>
-	<color name="badoo_blue">#7000e3</color>
-	<color name="dailymotion_light_blue">#00adfd</color>
-	<color name="digg_black">#1b1a19</color>
-	<color name="flickr_black_brown">#202123</color>
-	<color name="linkedin_blue">#0083bf</color>
-	<color name="meetup_rose_red">#f64060</color>
-	<color name="mylife_green">#2c9f3c</color>
-	<color name="myspace_sky_blue">#008dde</color>
-	<color name="qzone_blue">#146fdf</color>
-	<color name="stumbleupon_orange">#ff8226</color>
-	
+  <color name="primaryColor">#795548</color>
+  <color name="primaryDarkColor">#5D4037</color>
+  <color name="primaryLightColor">#D7CCC8</color>
+  <color name="accent">#607D8B</color>
+  <color name="primaryTextColor">#212121</color>
+  <color name="secondaryTextColor">#757575</color>
+  <color name="icons">#FFFFFF</color>
+  <color name="divider">#BDBDBD</color>
 </resources>

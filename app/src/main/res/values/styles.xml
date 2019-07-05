@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<style name="BaseTheme" parent="@android:style/Theme.Holo.Light">
-		<item name="android:actionBarStyle">@style/BaseTheme.ActionBarStyle</item>
-		<item name="android:actionOverflowButtonStyle">@style/BaseTheme.ActionButton.Overflow</item> <!-- sets the style for the overflow button -->
-	</style>
+   <style name="BaseTheme" parent="@android:style/Theme.Holo.Light">
+	  <item name="android:actionBarStyle">@style/BaseTheme.ActionBarStyle</item>
+	  <item name="android:actionOverflowButtonStyle">@style/BaseTheme.ActionButton.Overflow</item> <!-- sets the style for the overflow button -->
+   </style>
 
-	<style name="BaseTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
-		<item name="android:background">@color/primaryColor</item>
-		<item name="android:titleTextStyle">@style/BaseTheme.ActionBarStyle.TitleTextStyle</item>
-	</style>
+   <style name="BaseTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
+	  <item name="android:background">@color/primaryColor</item>
+	  <item name="android:titleTextStyle">@style/BaseTheme.ActionBarStyle.TitleTextStyle</item>
+   </style>
 
-	<style name="BaseTheme.ActionBarStyle.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-		<item name="android:textColor">@color/white</item>
-	</style>
+   <style name="BaseTheme.ActionBarStyle.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+	  <item name="android:textColor">@android:color/white</item>
+   </style>
 
-	<style name="BaseTheme.ActionButton.Overflow" parent="@android:style/Widget.Holo.ActionButton.Overflow">
-		<item name="android:tint">@color/white</item>
-	</style>
-	
-	<style name="NoActionBar" parent="BaseTheme">
-		<item name="android:windowActionBar">false</item>
-		<item name="android:windowNoTitle">true</item>
-	</style>
+   <style name="BaseTheme.ActionButton.Overflow" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+	  <item name="android:tint">@android:color/white</item>
+   </style>
+
+   <style name="NoActionBar" parent="BaseTheme">
+	  <item name="android:windowActionBar">false</item>
+	  <item name="android:windowNoTitle">true</item>
+   </style>
 </resources>
