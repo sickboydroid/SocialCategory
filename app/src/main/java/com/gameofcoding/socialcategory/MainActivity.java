@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Toast;
 import com.gameofcoding.socialcategory.Activities.WebViewActivity;
 import com.gameofcoding.socialcategory.Helpers.UrlManager;
-import com.gameofcoding.socialcategory.Helpers.URLS;
 
 public class MainActivity extends Activity {
 	Context context = this;
@@ -29,7 +28,7 @@ public class MainActivity extends Activity {
 		intent.putExtra(WebViewActivity.KEY_RESID_STATUS_BAR_COLOR, 
 						R.color.facebook);
 		intent.putExtra(WebViewActivity.KEY_URL_OF_SOCIAL_MEDIA,
-						URLS.URL_OF_FACEBOOK);
+						UrlManager.URL_OF_FACEBOOK);
 		startActivity(intent);
 	}
 
@@ -39,7 +38,7 @@ public class MainActivity extends Activity {
 		intent.putExtra(WebViewActivity.KEY_RESID_STATUS_BAR_COLOR, 
 						R.color.messenger);
 		intent.putExtra(WebViewActivity.KEY_URL_OF_SOCIAL_MEDIA,
-						URLS.URL_OF_MESSENGER);
+						UrlManager.URL_OF_MESSENGER);
 		startActivity(intent);
 	}
 
@@ -49,7 +48,7 @@ public class MainActivity extends Activity {
 		intent.putExtra(WebViewActivity.KEY_RESID_STATUS_BAR_COLOR, 
 						R.color.twitter);
 		intent.putExtra(WebViewActivity.KEY_URL_OF_SOCIAL_MEDIA,
-						URLS.URL_OF_TWITTER);
+						UrlManager.URL_OF_TWITTER);
 		startActivity(intent);
 	}
 
@@ -59,7 +58,7 @@ public class MainActivity extends Activity {
 		intent.putExtra(WebViewActivity.KEY_RESID_STATUS_BAR_COLOR, 
 						R.color.youtube);
 		intent.putExtra(WebViewActivity.KEY_URL_OF_SOCIAL_MEDIA,
-						URLS.URL_OF_YOUTUBE);
+						UrlManager.URL_OF_YOUTUBE);
 		startActivity(intent);
 	}
 
@@ -69,7 +68,7 @@ public class MainActivity extends Activity {
 		intent.putExtra(WebViewActivity.KEY_RESID_STATUS_BAR_COLOR, 
 						R.color.snapchat);
 		intent.putExtra(WebViewActivity.KEY_URL_OF_SOCIAL_MEDIA,
-						URLS.URL_OF_SNAPCHAT);
+						UrlManager.URL_OF_SNAPCHAT);
 		startActivity(intent);
 	}
 
@@ -79,9 +78,9 @@ public class MainActivity extends Activity {
 		intent.putExtra(WebViewActivity.KEY_RESID_STATUS_BAR_COLOR, 
 						R.color.instagram);
 		intent.putExtra(WebViewActivity.KEY_URL_OF_SOCIAL_MEDIA,
-						URLS.URL_OF_INSTAGRAM);
+						UrlManager.URL_OF_INSTAGRAM);
 		startActivity(intent);
-		}
+	}
 
 	public void gmail(View view) {
 
@@ -90,7 +89,7 @@ public class MainActivity extends Activity {
 		intent.putExtra(WebViewActivity.KEY_RESID_STATUS_BAR_COLOR, 
 						R.color.gmail);
 		intent.putExtra(WebViewActivity.KEY_URL_OF_SOCIAL_MEDIA,
-						URLS.URL_OF_GMAIL);
+						UrlManager.URL_OF_GMAIL);
 		startActivity(intent);
 	}
 
@@ -101,7 +100,7 @@ public class MainActivity extends Activity {
 		intent.putExtra(WebViewActivity.KEY_RESID_STATUS_BAR_COLOR, 
 						R.color.outlook);
 		intent.putExtra(WebViewActivity.KEY_URL_OF_SOCIAL_MEDIA,
-						URLS.URL_OF_OUTLOOK);
+						UrlManager.URL_OF_OUTLOOK);
 		startActivity(intent);
 	}
 
@@ -112,10 +111,10 @@ public class MainActivity extends Activity {
 		intent.putExtra(WebViewActivity.KEY_RESID_STATUS_BAR_COLOR, 
 						R.color.yahoomail);
 		intent.putExtra(WebViewActivity.KEY_URL_OF_SOCIAL_MEDIA,
-						URLS.URL_OF_YAHOO_MAIL);
+						UrlManager.URL_OF_YAHOO_MAIL);
 		startActivity(intent);
 	}
-	
+
 	public void tikTok(View view) {
 
 		Intent intent = new Intent(context, 
@@ -123,7 +122,7 @@ public class MainActivity extends Activity {
 		intent.putExtra(WebViewActivity.KEY_RESID_STATUS_BAR_COLOR, 
 						R.color.tik_tok);
 		intent.putExtra(WebViewActivity.KEY_URL_OF_SOCIAL_MEDIA,
-						URLS.URL_OF_TIK_TOK);
+						UrlManager.URL_OF_TIK_TOK);
 		startActivity(intent);
 	}
 }

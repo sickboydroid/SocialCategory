@@ -15,17 +15,19 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 import com.gameofcoding.socialcategory.Helpers.UrlManager;
 import com.gameofcoding.socialcategory.R;
-import com.gameofcoding.socialcategory.Helpers.URLS;
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import android.util.DisplayMetrics;
 
 public class WebViewActivity extends Activity {
 	final Context context = this;
 	private String URL;
 	private int webpageThemeColor;
-	
-	// Web browser User agents
-	private final String PHONE_UA = "Mozilla/5.0 (Linux; <Android Version>; <Build Tag etc.>) AppleWebKit/<WebKit Rev> (KHTML, like Gecko) Chrome/<Chrome Rev> Mobile Safari/<WebKit Rev>";
 
 	// Keys
 	public static final String KEY_RESID_STATUS_BAR_COLOR = "ksjd_keyStatusBarColor";
@@ -43,7 +45,7 @@ public class WebViewActivity extends Activity {
 		progressBar = findViewById(R.id.layout_webviewProgressBar);
 		manageIntents();
 		setUpWebView();
-			getWebView().loadUrl(getURL());
+		getWebView().loadUrl(getURL());
 	}
 
 	// Gets Intents for activity startup
@@ -51,7 +53,7 @@ public class WebViewActivity extends Activity {
 		// Getting url
 		int URLOf = getIntent().getIntExtra(KEY_URL_OF_SOCIAL_MEDIA, 0);
 		setURL(new UrlManager(context, URLOf)
-			   .getUrl(getURLType(URLOf)));
+			   .getUrl());
 
 		// Getting Color
 		setWebpageThemeColor(getResources()
@@ -89,7 +91,7 @@ public class WebViewActivity extends Activity {
 		// Some optimal settings for android webview
 		WebSettings settings = getWebView().getSettings();
 		settings.setJavaScriptEnabled(true);
-		settings.setUserAgentString("Mozilla/5.0 (Linux; Android 6.0.0; ikall n4 Build/LMY48B; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.65 Mobile Safari/537.36");
+		settings.setUserAgentString(getUserAgent());
 
 		// Setting webclient for loading all links inside app
 		getWebView().setWebViewClient(new WebViewClient());
@@ -139,9 +141,47 @@ public class WebViewActivity extends Activity {
 		return URL;
 	}
 
-	// INCOMPLETE METHODS
-	// Return Url Type for specific website
-	public int getURLType(int of) {
-		return new URLS().URL;
+	// Returns Specific user agent (UA) for webview
+	public String getUserAgent() {
+		String UA = null;
+
+
+		String deviceType = "";	
+		String deviceName = android.os.Build.MODEL;
+		String buildId = android.os.Build.FINGERPRINT;
+		String androidVersion = android.os.Build.VERSION.RELEASE;
+		if (!isTablet())
+			deviceType = " Mobile ";
+
+		if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.KITKAT)
+		// KitKat And Below
+			UA = "Mozilla/5.0 (Linux; U; Android " + androidVersion + "; en-gb; Build/KLP) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30";
+
+		else if (android.os.Build.VERSION.SDK_INT == android.os.Build.VERSION_CODES.KITKAT_WATCH)
+		// KitKat to lollipop
+			UA = "Mozilla/5.0 (Linux; Android " + androidVersion + "; " + deviceName + " Build/" + buildId + ") AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0" + deviceType + "Safari/537.36";
+
+		else if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
+		// Lollipop and above
+			UA = "Mozilla/5.0 (Linux; Android " + androidVersion + "; " + deviceName + " Build/" + buildId + "; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.65" + deviceType + "Safari/537.36";
+		return UA;
 	}
+
+	// Returns true if the device is tablet
+	public boolean isTablet() { 
+		try { 
+			// Compute screen size 
+			DisplayMetrics dm = context.getResources().getDisplayMetrics(); 
+			float screenWidth  = dm.widthPixels / dm.xdpi; 
+			float screenHeight = dm.heightPixels / dm.ydpi; 
+			double size = Math.sqrt(Math.pow(screenWidth, 2) + 
+									Math.pow(screenHeight, 2)); 
+			// Tablet devices have a screen size greater than 6 inches 
+			return size >= 6; 
+		} catch (Throwable t) { 
+			return false; 
+		} 
+	}
+
+	// INCOMPLETE METHODS
 }

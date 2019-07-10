@@ -8,42 +8,63 @@ import java.net.MalformedURLException;
 
 public class UrlManager {
 	private Context context;
+	public static final String SOCKET = "https://";
+	
+	public static final int URL_OF_FACEBOOK = 101;
+	public static final int URL_OF_MESSENGER = 102;
+	public static final int URL_OF_TWITTER = 103;
+	public static final int URL_OF_YOUTUBE = 104;
+	public static final int URL_OF_SNAPCHAT = 105;
+	public static final int URL_OF_INSTAGRAM = 106;
+	public static final int URL_OF_GMAIL = 107;
+	public static final int URL_OF_OUTLOOK = 108;
+	public static final int URL_OF_YAHOO_MAIL = 109;
+	public static final int URL_OF_TIK_TOK = 110;
 
 	private String URL;
-	private String mobileSiteURL;
-	private String desktopSiteURL;
 
 	public UrlManager(Context context, int URLOf) {
 		this.context = context;
-		URLS URLs = new URLS();
-		URL = URLs.get(URLOf, URLS.URL);
-		mobileSiteURL = URLs.get(URLOf, URLS.MOBILE_SITE_URL);
-		desktopSiteURL = URLs.get(URLOf, URLS.DESKTOP_SITE_URL);
+		switch (URLOf) {
+			// Most Popular Social Media
+			case URL_OF_FACEBOOK:
+				URL = SOCKET + "www.facebook.com";
+				break;
+			case URL_OF_MESSENGER:
+				URL = SOCKET + "www.facebook.com/messages";
+				break;
+			case URL_OF_TWITTER:
+				URL = SOCKET + "www.twitter.com";
+				break;
+			case URL_OF_YOUTUBE:
+				URL = SOCKET + "www.youtube.com";
+				break;
+			case URL_OF_SNAPCHAT:
+				URL = SOCKET + "www.snapchat.com";
+				break;
+			case URL_OF_INSTAGRAM:
+				URL = SOCKET + "www.instagram.com";
+				break;
+			case URL_OF_GMAIL:
+				URL = SOCKET + "www.gmail.com";
+				break;
+			case URL_OF_OUTLOOK:
+				URL = SOCKET + "www.outlook.com";
+				break;
+			case URL_OF_YAHOO_MAIL:
+				URL = SOCKET + "www.yahoomail.com";
+				break;
+				// Popular Social Media
+			case URL_OF_TIK_TOK:
+				URL = SOCKET + "www.tiktok.com";
+				break;
+				// Other Popular Social Media
+				// Others
+		}
 	}
 
 	public String getUrl() {
 		return URL;
-	}
-
-	public String getUrl(int type) {
-		if (type == URLS.URL)
-			return URL;
-		else if (type == URLS.MOBILE_SITE_URL) 
-			return getMobileSiteURL();
-		else
-			return getDesktopSiteURL();
-	}
-
-	public String getDesktopSiteURL() {
-		return desktopSiteURL;
-	}
-
-	public String getMobileSiteURL() {
-		return mobileSiteURL;
-	}
-
-	public boolean hasTwoSeparateSites() {
-		return !mobileSiteURL.replaceFirst(URLS.SOCKET, "").isEmpty();
 	}
 
 	public void getOptimization() {}
