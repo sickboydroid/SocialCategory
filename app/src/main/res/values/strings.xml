@@ -17,6 +17,7 @@
    <string name="tik_tok">Tik Tok</string>
    
 	  <!--	Popular Social Media websites	-->
+   <string name="popular_social_media">Popular Social Media</string>
    <string name="facebook">Facebook</string>
    <string name="netflix">Netflix</string>
    <string name="google_plus">Google+</string>

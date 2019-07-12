@@ -9,15 +9,17 @@
   <color name="icons">#FFFFFF</color>
   <color name="divider">#BDBDBD</color>
   
-  <!--Most Popular-->
+  <!--Most Popular Social Media-->
    <color name="facebook">#3C5A99</color>
    <color name="messenger">#3C5A99</color>
    <color name="twitter">#1da1f2</color>
    <color name="youtube">#e62117</color>
    <color name="snapchat">#fffc00</color>
    <color name="instagram">#3897f0</color>
-   <color name="gmail">#000000</color>
-   <color name="outlook">#000000</color>
-   <color name="yahoomail">#000000</color>
-   <color name="tik_tok">#000000</color>
+   <color name="gmail">#d93025</color>
+   <color name="outlook">#0072c6</color>
+   <color name="yahoomail">#188fff</color>
+   
+   <!--Popular Social Media-->
+   <color name="tik_tok">#010101</color>
 </resources>

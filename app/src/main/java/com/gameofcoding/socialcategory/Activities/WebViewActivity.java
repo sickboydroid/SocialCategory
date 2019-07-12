@@ -48,6 +48,14 @@ public class WebViewActivity extends Activity {
 		getWebView().loadUrl(getURL());
 	}
 
+	@Override
+	public void onBackPressed() {
+		if (getWebView().canGoBack())
+			getWebView().goBack();
+		else
+			finish();
+	}
+	
 	// Gets Intents for activity startup
 	public void manageIntents() {
 		// Getting url
@@ -92,7 +100,7 @@ public class WebViewActivity extends Activity {
 		WebSettings settings = getWebView().getSettings();
 		settings.setJavaScriptEnabled(true);
 		settings.setUserAgentString(getUserAgent());
-		
+
 		// Setting webclient for loading all links inside app
 		getWebView().setWebViewClient(new WebViewClient());
 
@@ -162,6 +170,4 @@ public class WebViewActivity extends Activity {
 			UA = "Mozilla/5.0 (Linux; Android " + androidVersion + "; " + deviceName + " Build/" + buildId + "; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.65 Mobile Safari/537.36";
 		return UA;
 	}
-
-	// INCOMPLETE METHODS
 }

@@ -40,19 +40,19 @@ public class UrlManager {
 				URL = SOCKET + "www.youtube.com";
 				break;
 			case URL_OF_SNAPCHAT:
-				URL = SOCKET + "www.snapchat.com";
+				URL = SOCKET + "accounts.snapchat.com";
 				break;
 			case URL_OF_INSTAGRAM:
 				URL = SOCKET + "www.instagram.com";
 				break;
 			case URL_OF_GMAIL:
-				URL = SOCKET + "www.gmail.com";
+				URL = SOCKET + "mail.google.com";
 				break;
 			case URL_OF_OUTLOOK:
 				URL = SOCKET + "www.outlook.com";
 				break;
 			case URL_OF_YAHOO_MAIL:
-				URL = SOCKET + "www.yahoomail.com";
+				URL = SOCKET + "mail.yahoo.com";
 				break;
 				// Popular Social Media
 			case URL_OF_TIK_TOK:

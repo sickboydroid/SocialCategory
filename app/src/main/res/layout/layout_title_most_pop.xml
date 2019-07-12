@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"
+   android:paddingTop="3dp"
+   android:weightSum="2">
+
+   <View
+	  android:layout_width="0dp"
+	  android:layout_height="3dp"
+	  android:layout_weight="1"
+	  android:background="@android:color/black"/>
+
+   <TextView
+	  android:layout_width="wrap_content"
+	  android:layout_height="wrap_content"
+	  android:background="@drawable/round_square"
+	  android:text="@string/most_popular_social_media"
+	  android:textColor="@android:color/black"
+	  android:textStyle="bold"/>
+
+   <View
+	  android:layout_width="0dp"
+	  android:layout_height="3dp"
+	  android:layout_weight="1"
+	  android:background="@android:color/black"/>
+
+</LinearLayout>
+

@@ -137,7 +137,7 @@ containing a value of this type.
         public static final int cardview_shadow_end_color=0x7f050002;
         public static final int cardview_shadow_start_color=0x7f050003;
         public static final int divider=0x7f05000b;
-        /** Most Popular
+        /** Most Popular Social Media
          */
         public static final int facebook=0x7f05000c;
         public static final int gmail=0x7f050012;
@@ -151,6 +151,8 @@ containing a value of this type.
         public static final int primaryTextColor=0x7f050008;
         public static final int secondaryTextColor=0x7f050009;
         public static final int snapchat=0x7f050010;
+        /** Popular Social Media
+         */
         public static final int tik_tok=0x7f050015;
         public static final int twitter=0x7f05000e;
         public static final int yahoomail=0x7f050014;
@@ -183,44 +185,57 @@ containing a value of this type.
     }
     public static final class layout {
         public static final int layout_main=0x7f030000;
-        public static final int layout_webview=0x7f030001;
+        public static final int layout_title_most_pop=0x7f030001;
+        public static final int layout_title_pop=0x7f030002;
+        public static final int layout_webview=0x7f030003;
+        public static final int view_facebook=0x7f030004;
+        public static final int view_gmail=0x7f030005;
+        public static final int view_instagram=0x7f030006;
+        public static final int view_messenger=0x7f030007;
+        public static final int view_outlook=0x7f030008;
+        public static final int view_snapchat=0x7f030009;
+        public static final int view_tik_tok=0x7f03000a;
+        public static final int view_twitter=0x7f03000b;
+        public static final int view_yahoomail=0x7f03000c;
+        public static final int view_youtube=0x7f03000d;
     }
     public static final class string {
         public static final int app_name=0x7f070000;
-        public static final int badoo=0x7f070016;
-        public static final int dailymotion=0x7f070017;
-        public static final int digg=0x7f070018;
-        /** 	Popular Social Media websites	
-         */
+        public static final int badoo=0x7f070017;
+        public static final int dailymotion=0x7f070018;
+        public static final int digg=0x7f070019;
         public static final int facebook=0x7f070002;
-        public static final int flickr=0x7f070019;
-        public static final int github=0x7f070010;
+        public static final int flickr=0x7f07001a;
+        public static final int github=0x7f070011;
         public static final int gmail=0x7f070008;
-        public static final int google_plus=0x7f07000d;
+        public static final int google_plus=0x7f07000e;
         public static final int instagram=0x7f070007;
-        public static final int linkedin=0x7f07001a;
-        public static final int meetup=0x7f07001b;
+        public static final int linkedin=0x7f07001b;
+        public static final int meetup=0x7f07001c;
         public static final int messenger=0x7f070003;
         /** Most Popular
          */
         public static final int most_popular_social_media=0x7f070001;
-        public static final int my_life=0x7f07001c;
-        public static final int my_space=0x7f07001d;
-        public static final int netflix=0x7f07000c;
-        public static final int nine_gag=0x7f070015;
+        public static final int my_life=0x7f07001d;
+        public static final int my_space=0x7f07001e;
+        public static final int netflix=0x7f07000d;
+        public static final int nine_gag=0x7f070016;
         /** 	Other Social Media websites		
          */
-        public static final int other_social_media=0x7f070014;
+        public static final int other_social_media=0x7f070015;
         public static final int outlook=0x7f070009;
-        public static final int pinterest=0x7f070011;
-        public static final int quora=0x7f07000f;
-        public static final int qzone=0x7f07001e;
-        public static final int reddit=0x7f070013;
+        public static final int pinterest=0x7f070012;
+        /** 	Popular Social Media websites	
+         */
+        public static final int popular_social_media=0x7f07000c;
+        public static final int quora=0x7f070010;
+        public static final int qzone=0x7f07001f;
+        public static final int reddit=0x7f070014;
         public static final int snapchat=0x7f070006;
-        public static final int stackoverflow=0x7f07000e;
-        public static final int stumbleupon=0x7f07001f;
+        public static final int stackoverflow=0x7f07000f;
+        public static final int stumbleupon=0x7f070020;
         public static final int tik_tok=0x7f07000b;
-        public static final int tumblr=0x7f070012;
+        public static final int tumblr=0x7f070013;
         public static final int twitter=0x7f070004;
         public static final int yahoo_mail=0x7f07000a;
         public static final int youtube=0x7f070005;
