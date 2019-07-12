@@ -92,7 +92,7 @@ public class WebViewActivity extends Activity {
 		WebSettings settings = getWebView().getSettings();
 		settings.setJavaScriptEnabled(true);
 		settings.setUserAgentString(getUserAgent());
-
+		
 		// Setting webclient for loading all links inside app
 		getWebView().setWebViewClient(new WebViewClient());
 
@@ -145,13 +145,9 @@ public class WebViewActivity extends Activity {
 	public String getUserAgent() {
 		String UA = null;
 
-
-		String deviceType = "";	
-		String deviceName = android.os.Build.MODEL;
-		String buildId = android.os.Build.FINGERPRINT;
+		String deviceName = android.os.Build.MODEL.toLowerCase();
+		String buildId = android.os.Build.ID;
 		String androidVersion = android.os.Build.VERSION.RELEASE;
-		if (!isTablet())
-			deviceType = " Mobile ";
 
 		if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.KITKAT)
 		// KitKat And Below
@@ -159,28 +155,12 @@ public class WebViewActivity extends Activity {
 
 		else if (android.os.Build.VERSION.SDK_INT == android.os.Build.VERSION_CODES.KITKAT_WATCH)
 		// KitKat to lollipop
-			UA = "Mozilla/5.0 (Linux; Android " + androidVersion + "; " + deviceName + " Build/" + buildId + ") AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0" + deviceType + "Safari/537.36";
+			UA = "Mozilla/5.0 (Linux; Android " + androidVersion + "; " + deviceName + " Build/" + buildId + ") AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36";
 
 		else if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
 		// Lollipop and above
-			UA = "Mozilla/5.0 (Linux; Android " + androidVersion + "; " + deviceName + " Build/" + buildId + "; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.65" + deviceType + "Safari/537.36";
+			UA = "Mozilla/5.0 (Linux; Android " + androidVersion + "; " + deviceName + " Build/" + buildId + "; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.65 Mobile Safari/537.36";
 		return UA;
-	}
-
-	// Returns true if the device is tablet
-	public boolean isTablet() { 
-		try { 
-			// Compute screen size 
-			DisplayMetrics dm = context.getResources().getDisplayMetrics(); 
-			float screenWidth  = dm.widthPixels / dm.xdpi; 
-			float screenHeight = dm.heightPixels / dm.ydpi; 
-			double size = Math.sqrt(Math.pow(screenWidth, 2) + 
-									Math.pow(screenHeight, 2)); 
-			// Tablet devices have a screen size greater than 6 inches 
-			return size >= 6; 
-		} catch (Throwable t) { 
-			return false; 
-		} 
 	}
 
 	// INCOMPLETE METHODS
