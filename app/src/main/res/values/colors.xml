@@ -22,4 +22,14 @@
    
    <!--Popular Social Media-->
    <color name="tik_tok">#010101</color>
+   <color name="telegram">#344557</color>
+   <color name="reddit">#ff4500</color>
+   <color name="stackoverflow">#f48126</color>
+   <color name="netflix">#e50914</color>
+   <color name="quora">#b92b27</color>
+   <color name="tumblr">#00142b</color>
+   <color name="qzone">#146fdf</color>
+   <color name="skype">#0178ca</color>
+   <color name="viber">#574e92</color>
+   <color name="vk">#5181b8</color>
 </resources>

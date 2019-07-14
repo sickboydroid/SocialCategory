@@ -18,7 +18,8 @@
         android:theme="@style/BaseTheme" >
         <activity
             android:name="com.gameofcoding.socialcategory.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:taskAffinity="com.example.AffinityA" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,6 +28,8 @@
         </activity>
         <activity
             android:name="com.gameofcoding.socialcategory.Activities.WebViewActivity"
+            android:documentLaunchMode="always"
+            android:taskAffinity="com.gameofcoding.socialcategory.webviewactivity"
             android:theme="@style/NoActionBar" >
         </activity>
     </application>

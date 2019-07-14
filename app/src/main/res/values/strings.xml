@@ -3,7 +3,7 @@
 
    <string name="app_name">SocialCategory</string>
 
-   <!--Most Popular-->
+   <!--Most Popular Social Media Websites-->
    <string name="most_popular_social_media">Most popular Social Media</string>
    <string name="facebook">Facebook</string>
    <string name="messenger">Messenger</string>
@@ -14,20 +14,22 @@
    <string name="gmail">Gmail</string>
    <string name="outlook">Outlook</string>
    <string name="yahoo_mail">Yahoo Mail</string>
-   <string name="tik_tok">Tik Tok</string>
+   
    
 	  <!--	Popular Social Media websites	-->
    <string name="popular_social_media">Popular Social Media</string>
-   <string name="facebook">Facebook</string>
-   <string name="netflix">Netflix</string>
-   <string name="google_plus">Google+</string>
-   <string name="stackoverflow">Stackoverflow</string>
-   <string name="quora">Quora</string>
-   <string name="github">Github</string>
-   <string name="pinterest">Pinterest</string>
-   <string name="tumblr">Tumblr</string>
+   <string name="tik_tok">Tik Tok</string>
+   <string name="telegram">Telegram</string>
    <string name="reddit">Reddit</string>
-
+   <string name="stackoverflow">Stackoverflow</string>
+   <string name="netflix">Netflix</string>
+   <string name="quora">Quora</string>
+   <string name="tumblr">Tumblr</string>
+   <string name="qzone">Qzone</string>
+   <string name="skype">Skype</string>
+   <string name="viber">Viber</string>
+   <string name="vk">VK</string>
+   
    <!--	Other Social Media websites		-->
    <string name="other_social_media">Other Social Media</string>
    <string name="nine_gag">9 Gag</string>

@@ -7,7 +7,7 @@
 	  android:layout_height="match_parent"
 	  android:orientation="vertical">
 
-	  <!--< Block Title (Most Popular Social Media) >-->
+	  <!--Block Title (Most Popular Social Media)-->
 	  <include layout="@layout/layout_title_most_pop"/>
 		 
 	  <!--First Row-->
@@ -49,7 +49,7 @@
 		 <include layout="@layout/view_yahoomail"/>
 	  </LinearLayout>
 
-	  <!--< Block Title (Popular Social Media) >-->
+	  <!--Block Title (Popular Social Media)-->
 	  <include layout="@layout/layout_title_pop"/>
 	  
 	  <!--First row-->
@@ -59,6 +59,47 @@
 		 android:orientation="horizontal"
 		 android:weightSum="3">
 		 <include layout="@layout/view_tik_tok"/>
+
+		 <include layout="@layout/view_telegram"/>
+
+		 <include layout="@layout/view_reddit"/>
+	  </LinearLayout>
+	  
+	  <!--2nd row-->
+	  <LinearLayout
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content"
+		 android:orientation="horizontal"
+		 android:weightSum="3">
+		 <include layout="@layout/view_stackoverflow"/>
+
+		 <include layout="@layout/view_netflix"/>
+
+		 <include layout="@layout/view_quora"/>
+	  </LinearLayout>
+	  
+	  <!--3rd row-->
+	  <LinearLayout
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content"
+		 android:orientation="horizontal"
+		 android:weightSum="3">
+		 <include layout="@layout/view_tumblr"/>
+
+		 <include layout="@layout/view_qzone"/>
+
+		 <include layout="@layout/view_skype"/>
+	  </LinearLayout>
+	  
+	  <!--4th row-->
+	  <LinearLayout
+		 android:layout_width="match_parent"
+		 android:layout_height="wrap_content"
+		 android:orientation="horizontal"
+		 android:weightSum="2">
+		 <include layout="@layout/view_viber"/>
+
+		 <include layout="@layout/view_vk"/>
 	  </LinearLayout>
    </LinearLayout>
-</ScrollView> 
+</ScrollView>
