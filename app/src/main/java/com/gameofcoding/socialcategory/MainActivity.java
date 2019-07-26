@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.gameofcoding.socialcategory.Activities.WebViewActivity;
 import com.gameofcoding.socialcategory.Helpers.UrlManager;
 import android.os.Build;
+import java.io.BufferedWriter;
 
 public class MainActivity extends Activity {
 	Context context = this;

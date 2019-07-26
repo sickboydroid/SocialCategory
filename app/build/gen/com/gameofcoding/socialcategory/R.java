@@ -173,6 +173,7 @@ containing a value of this type.
         public static final int cardview_compat_inset_shadow=0x7f060000;
         public static final int cardview_default_elevation=0x7f060001;
         public static final int cardview_default_radius=0x7f060002;
+        public static final int imageViewDimen=0x7f060004;
     }
     public static final class drawable {
         public static final int ic_facebook=0x7f020000;
