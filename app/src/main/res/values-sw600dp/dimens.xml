@@ -2,4 +2,7 @@
 <resources>
    <dimen name="cardViewMargin">0dp</dimen>
    <dimen name="imageViewDimen">86dp</dimen>
+   <dimen name="imageViewMarginTop">15dp</dimen>
+   <dimen name="textViewPaddingBottom">10dp</dimen>
+   <dimen name="textViewPaddingTop">10dp</dimen>
 </resources>

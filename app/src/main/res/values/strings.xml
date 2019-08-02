@@ -3,6 +3,17 @@
 
    <string name="app_name">SocialCategory</string>
 
+   <!--Acitivity SocialMediaWebsiteLoader-->
+   <string name="reload">Reload</string>
+   <string name="error_occurred">Error Occurred: </string>
+   <string name="show_more">Show more</string>
+   <string name="show_less">Show less</string>
+   <string name="error_solution">
+	  1: Please check your internet connection.
+	  \n2: Restart your app.
+	  \n3: Reload current webpage.
+   </string>
+
    <!--Most Popular Social Media Websites-->
    <string name="most_popular_social_media">Most popular Social Media</string>
    <string name="facebook">Facebook</string>
@@ -14,9 +25,9 @@
    <string name="gmail">Gmail</string>
    <string name="outlook">Outlook</string>
    <string name="yahoo_mail">Yahoo Mail</string>
-   
-   
-	  <!--	Popular Social Media websites	-->
+
+
+   <!--	Popular Social Media websites	-->
    <string name="popular_social_media">Popular Social Media</string>
    <string name="tik_tok">Tik Tok</string>
    <string name="telegram">Telegram</string>
@@ -29,7 +40,7 @@
    <string name="skype">Skype</string>
    <string name="viber">Viber</string>
    <string name="vk">VK</string>
-   
+
    <!--	Other Social Media websites		-->
    <string name="other_social_media">Other Social Media</string>
    <string name="nine_gag">9 Gag</string>

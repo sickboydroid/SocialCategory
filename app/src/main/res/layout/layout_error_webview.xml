@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center">
+
+	<TextView
+		android:id="@+id/textViewErrorTitle"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:paddingRight="5dp"
+		android:text="@string/error_occurred"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:textColor="@color/errorTextColor"
+		android:textStyle="bold"/>
+
+	<TextView
+		android:id="@+id/textViewErrorCause"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/textViewErrorTitle"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:textColor="@color/errorSecondaryTextColor"
+		android:textStyle="italic"/>
+
+	<TextView
+		android:id="@+id/textViewErrorSolutions"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/textViewErrorTitle"
+		android:layout_toRightOf="@id/textViewErrorTitle"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:textStyle="italic"/>
+
+	<Button
+		style="?android:attr/buttonBarButtonStyle"
+		android:id="@+id/buttonShowMore"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_alignRight="@id/textViewErrorSolutions"
+		android:layout_below="@id/textViewErrorSolutions"
+		android:text="@string/show_more"/>
+
+	<Button
+		style="?android:attr/buttonBarButtonStyle"
+		android:id="@+id/buttonReload"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_alignTop="@id/buttonShowMore"
+		android:layout_toRightOf="@id/buttonShowMore"
+		android:text="@string/reload"/>
+
+	<TextView
+		android:id="@+id/textViewShowMoreDescription"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/buttonShowMore"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:textStyle="italic"
+		android:visibility="invisible"/>
+
+</RelativeLayout>
+

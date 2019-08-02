@@ -19,7 +19,7 @@
 		 android:layout_height="@dimen/imageViewDimen"
 		 android:layout_width="@dimen/imageViewDimen"
 		 android:layout_gravity="center"
-		 android:layout_marginTop="15dp"
+		 android:layout_marginTop="@dimen/imageViewMarginTop"
 		 android:layout_marginLeft="10dp"
 		 android:layout_marginRight="10dp"
 		 android:src="@drawable/ic_tik_tok"/>
@@ -28,8 +28,8 @@
 		 android:layout_width="wrap_content"
 		 android:layout_height="wrap_content"
 		 android:layout_gravity="bottom|center_horizontal"
-		 android:paddingBottom="10dp"
-		 android:paddingTop="10dp"
+		 android:paddingBottom="@dimen/textViewPaddingBottom"
+		 android:paddingTop="@dimen/textViewPaddingTop"
 		 android:text="@string/tik_tok"/>
    </LinearLayout>
 </android.support.v7.widget.CardView>
