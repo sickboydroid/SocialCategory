@@ -10,7 +10,7 @@ package com.gameofcoding.socialcategory;
 public final class R {
     public static final class anim {
         public static final int anim_slide_in_top=0x7f040000;
-        public static final int anim_slide_out_bottom=0x7f040001;
+        public static final int anim_slide_out_top=0x7f040001;
     }
     public static final class attr {
         /**  Background color for CardView. 
@@ -214,13 +214,12 @@ containing a value of this type.
     }
     public static final class id {
         public static final int buttonReload=0x7f090004;
-        public static final int buttonShowMore=0x7f090003;
-        public static final int layout_webviewProgressBar=0x7f090007;
-        public static final int layout_webviewWebView=0x7f090006;
+        public static final int layout_webviewProgressBar=0x7f090006;
+        public static final int layout_webviewWebView=0x7f090005;
         public static final int textViewErrorCause=0x7f090001;
-        public static final int textViewErrorSolutions=0x7f090002;
+        public static final int textViewErrorMessage=0x7f090002;
+        public static final int textViewErrorSolutions=0x7f090003;
         public static final int textViewErrorTitle=0x7f090000;
-        public static final int textViewShowMoreDescription=0x7f090005;
     }
     public static final class layout {
         public static final int layout_error_webview=0x7f030000;
@@ -252,52 +251,93 @@ containing a value of this type.
     }
     public static final class string {
         public static final int app_name=0x7f080000;
-        public static final int badoo=0x7f08001e;
-        public static final int dailymotion=0x7f08001f;
-        public static final int digg=0x7f080020;
+        public static final int badoo=0x7f080047;
+        public static final int dailymotion=0x7f080048;
+        public static final int digg=0x7f080049;
+        public static final int error_authentication=0x7f080005;
+        public static final int error_authentication_solutions=0x7f080006;
+        public static final int error_bad_url=0x7f080007;
+        public static final int error_bad_url_solutions=0x7f080008;
+        public static final int error_connect=0x7f080009;
+        public static final int error_connect_solutions=0x7f08000a;
+        public static final int error_failed_ssl_handshake=0x7f08000b;
+        public static final int error_failed_ssl_handshake_solutions=0x7f08000c;
+        public static final int error_file=0x7f08000d;
+        public static final int error_file_not_found=0x7f08000f;
+        public static final int error_file_not_found_solutions=0x7f080010;
+        public static final int error_file_solutions=0x7f08000e;
+        public static final int error_host_lookup=0x7f080011;
+        public static final int error_host_lookup_solutions=0x7f080012;
+        public static final int error_io=0x7f080013;
+        public static final int error_io_solutions=0x7f080014;
         public static final int error_occurred=0x7f080002;
-        public static final int error_solution=0x7f080005;
-        public static final int facebook=0x7f080007;
-        public static final int flickr=0x7f080021;
-        public static final int gmail=0x7f08000d;
-        public static final int instagram=0x7f08000c;
-        public static final int linkedin=0x7f080022;
-        public static final int meetup=0x7f080023;
-        public static final int messenger=0x7f080008;
+        public static final int error_proxy_authentication=0x7f080015;
+        public static final int error_proxy_authentication_solutions=0x7f080016;
+        public static final int error_redirect_loop=0x7f080017;
+        public static final int error_redirect_loop_solutions=0x7f080018;
+        public static final int error_solution=0x7f080003;
+        public static final int error_timeout=0x7f080019;
+        public static final int error_timeout_solutions=0x7f08001a;
+        public static final int error_too_many_requests=0x7f08001b;
+        public static final int error_too_many_requests_solutions=0x7f08001c;
+        public static final int error_unknown=0x7f08001d;
+        public static final int error_unknown_solutions=0x7f08001e;
+        public static final int error_unsafe_resource=0x7f08001f;
+        public static final int error_unsafe_resource_solutions=0x7f080020;
+        public static final int error_unsupported_auth_scheme=0x7f080021;
+        public static final int error_unsupported_auth_scheme_solutions=0x7f080022;
+        public static final int error_unsupported_scheme=0x7f080023;
+        public static final int error_unsupported_scheme_solutions=0x7f080024;
+        public static final int facebook=0x7f080030;
+        public static final int flickr=0x7f08004a;
+        public static final int gmail=0x7f080036;
+        public static final int instagram=0x7f080035;
+        public static final int linkedin=0x7f08004b;
+        public static final int meetup=0x7f08004c;
+        public static final int messenger=0x7f080031;
         /** Most Popular Social Media Websites
          */
-        public static final int most_popular_social_media=0x7f080006;
-        public static final int my_life=0x7f080024;
-        public static final int my_space=0x7f080025;
-        public static final int netflix=0x7f080015;
-        public static final int nine_gag=0x7f08001d;
+        public static final int most_popular_social_media=0x7f08002f;
+        public static final int my_life=0x7f08004d;
+        public static final int my_space=0x7f08004e;
+        public static final int netflix=0x7f08003e;
+        public static final int nine_gag=0x7f080046;
+        public static final int no_info=0x7f080004;
         /** 	Other Social Media websites		
          */
-        public static final int other_social_media=0x7f08001c;
-        public static final int outlook=0x7f08000e;
+        public static final int other_social_media=0x7f080045;
+        public static final int outlook=0x7f080037;
         /** 	Popular Social Media websites	
          */
-        public static final int popular_social_media=0x7f080010;
-        public static final int quora=0x7f080016;
-        public static final int qzone=0x7f080018;
-        public static final int reddit=0x7f080013;
+        public static final int popular_social_media=0x7f080039;
+        public static final int quora=0x7f08003f;
+        public static final int qzone=0x7f080041;
+        public static final int reddit=0x7f08003c;
         /** Acitivity SocialMediaWebsiteLoader
          */
         public static final int reload=0x7f080001;
-        public static final int show_less=0x7f080004;
-        public static final int show_more=0x7f080003;
-        public static final int skype=0x7f080019;
-        public static final int snapchat=0x7f08000b;
-        public static final int stackoverflow=0x7f080014;
-        public static final int stumbleupon=0x7f080026;
-        public static final int telegram=0x7f080012;
-        public static final int tik_tok=0x7f080011;
-        public static final int tumblr=0x7f080017;
-        public static final int twitter=0x7f080009;
-        public static final int viber=0x7f08001a;
-        public static final int vk=0x7f08001b;
-        public static final int yahoo_mail=0x7f08000f;
-        public static final int youtube=0x7f08000a;
+        public static final int safe_browsing_threat_billing=0x7f080025;
+        public static final int safe_browsing_threat_billing_solutions=0x7f080026;
+        public static final int safe_browsing_threat_malware=0x7f080027;
+        public static final int safe_browsing_threat_malware_solutions=0x7f080028;
+        public static final int safe_browsing_threat_phishing=0x7f080029;
+        public static final int safe_browsing_threat_phishing_solutions=0x7f08002a;
+        public static final int safe_browsing_threat_unknown=0x7f08002b;
+        public static final int safe_browsing_threat_unknown_solutions=0x7f08002c;
+        public static final int safe_browsing_threat_unwanted_software=0x7f08002d;
+        public static final int safe_browsing_threat_unwanted_software_solutions=0x7f08002e;
+        public static final int skype=0x7f080042;
+        public static final int snapchat=0x7f080034;
+        public static final int stackoverflow=0x7f08003d;
+        public static final int stumbleupon=0x7f08004f;
+        public static final int telegram=0x7f08003b;
+        public static final int tik_tok=0x7f08003a;
+        public static final int tumblr=0x7f080040;
+        public static final int twitter=0x7f080032;
+        public static final int viber=0x7f080043;
+        public static final int vk=0x7f080044;
+        public static final int yahoo_mail=0x7f080038;
+        public static final int youtube=0x7f080033;
     }
     public static final class style {
         public static final int Base_CardView=0x7f050001;

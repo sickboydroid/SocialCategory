@@ -1,58 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-   <string name="app_name">SocialCategory</string>
+	<string name="app_name">SocialCategory</string>
 
-   <!--Acitivity SocialMediaWebsiteLoader-->
-   <string name="reload">Reload</string>
-   <string name="error_occurred">Error Occurred: </string>
-   <string name="show_more">Show more</string>
-   <string name="show_less">Show less</string>
-   <string name="error_solution">
-	  1: Please check your internet connection.
-	  \n2: Restart your app.
-	  \n3: Reload current webpage.
-   </string>
+	<!--Acitivity SocialMediaWebsiteLoader-->
+	<string name="reload">Reload</string>
+	<string name="error_occurred">Error Occurred: </string>
+	<string name="error_solution">
+		1: Please check your internet connection.
+		\n2: Restart your app.
+		\n3: Reload current webpage.
+	</string>
+	<string name="no_info">No info available!</string>
+	
+	<string name="error_authentication">User authentication failed on server.</string>
+	<string name="error_authentication_solutions"></string>
 
-   <!--Most Popular Social Media Websites-->
-   <string name="most_popular_social_media">Most popular Social Media</string>
-   <string name="facebook">Facebook</string>
-   <string name="messenger">Messenger</string>
-   <string name="twitter">Twitter</string>
-   <string name="youtube">Youtube</string>
-   <string name="snapchat">Snapchat</string>
-   <string name="instagram">Instagram</string>
-   <string name="gmail">Gmail</string>
-   <string name="outlook">Outlook</string>
-   <string name="yahoo_mail">Yahoo Mail</string>
+	<string name="error_bad_url">Malformed URL.</string>
+	<string name="error_bad_url_solutions"></string>
+
+	<string name="error_connect">Failed to connect to the server.</string>
+	<string name="error_connect_solutions"></string>
+
+	<string name="error_failed_ssl_handshake">Failed to perform SSL handshake.</string>
+	<string name="error_failed_ssl_handshake_solutions"></string>
+
+	<string name="error_file">Generic file error.</string>
+	<string name="error_file_solutions"></string>
+
+	<string name="error_file_not_found">File not found.</string>
+	<string name="error_file_not_found_solutions"></string>
+
+	<string name="error_host_lookup">Server or proxy hostname lookup failed.</string>
+	<string name="error_host_lookup_solutions"></string>
+
+	<string name="error_io">Failed to read or write to the server.</string>
+	<string name="error_io_solutions"></string>
+
+	<string name="error_proxy_authentication">User authentication failed on proxy.</string>
+	<string name="error_proxy_authentication_solutions"></string>
+
+	<string name="error_redirect_loop">Too many redirects.</string>
+	<string name="error_redirect_loop_solutions"></string>
+
+	<string name="error_timeout">Connection timed out.</string>
+	<string name="error_timeout_solutions"></string>
+
+	<string name="error_too_many_requests">Too many requests during this load.</string>
+	<string name="error_too_many_requests_solutions"></string>
+
+	<string name="error_unknown">Generic error.</string>
+	<string name="error_unknown_solutions"></string>
+
+	<string name="error_unsafe_resource">Resource load was canceled by Safe Browsing.</string>
+	<string name="error_unsafe_resource_solutions"></string>
+
+	<string name="error_unsupported_auth_scheme">Unsupported authentication scheme (not basic or digest).</string>
+	<string name="error_unsupported_auth_scheme_solutions"></string>
+
+	<string name="error_unsupported_scheme">Unsupported URI scheme.</string>
+	<string name="error_unsupported_scheme_solutions"></string>
+
+	<string name="safe_browsing_threat_billing">The resource was blocked because it may trick the user into a billing agreement..</string>
+	<string name="safe_browsing_threat_billing_solutions"></string>
+
+	<string name="safe_browsing_threat_malware">The resource was blocked because it contains malware..</string>
+	<string name="safe_browsing_threat_malware_solutions"></string>
+
+	<string name="safe_browsing_threat_phishing">The resource was blocked because it contains deceptive content..</string>
+	<string name="safe_browsing_threat_phishing_solutions"></string>
+
+	<string name="safe_browsing_threat_unknown">The resource was blocked for an unknown reason..</string>
+	<string name="safe_browsing_threat_unknown_solutions"></string>
+
+	<string name="safe_browsing_threat_unwanted_software">The resource was blocked because it contains unwanted software..</string>
+	<string name="safe_browsing_threat_unwanted_software_solutions"></string>
+
+	<!--Most Popular Social Media Websites-->
+	<string name="most_popular_social_media">Most popular Social Media</string>
+	<string name="facebook">Facebook</string>
+	<string name="messenger">Messenger</string>
+	<string name="twitter">Twitter</string>
+	<string name="youtube">Youtube</string>
+	<string name="snapchat">Snapchat</string>
+	<string name="instagram">Instagram</string>
+	<string name="gmail">Gmail</string>
+	<string name="outlook">Outlook</string>
+	<string name="yahoo_mail">Yahoo Mail</string>
 
 
-   <!--	Popular Social Media websites	-->
-   <string name="popular_social_media">Popular Social Media</string>
-   <string name="tik_tok">Tik Tok</string>
-   <string name="telegram">Telegram</string>
-   <string name="reddit">Reddit</string>
-   <string name="stackoverflow">Stackoverflow</string>
-   <string name="netflix">Netflix</string>
-   <string name="quora">Quora</string>
-   <string name="tumblr">Tumblr</string>
-   <string name="qzone">Qzone</string>
-   <string name="skype">Skype</string>
-   <string name="viber">Viber</string>
-   <string name="vk">VK</string>
+	<!--	Popular Social Media websites	-->
+	<string name="popular_social_media">Popular Social Media</string>
+	<string name="tik_tok">Tik Tok</string>
+	<string name="telegram">Telegram</string>
+	<string name="reddit">Reddit</string>
+	<string name="stackoverflow">Stackoverflow</string>
+	<string name="netflix">Netflix</string>
+	<string name="quora">Quora</string>
+	<string name="tumblr">Tumblr</string>
+	<string name="qzone">Qzone</string>
+	<string name="skype">Skype</string>
+	<string name="viber">Viber</string>
+	<string name="vk">VK</string>
 
-   <!--	Other Social Media websites		-->
-   <string name="other_social_media">Other Social Media</string>
-   <string name="nine_gag">9 Gag</string>
-   <string name="badoo">Badoo</string>
-   <string name="dailymotion">Dailymotion</string>
-   <string name="digg">Digg</string>
-   <string name="flickr">Flikcr</string>
-   <string name="linkedin">Linkedin</string>
-   <string name="meetup">Meetup</string>
-   <string name="my_life">MyLife</string>
-   <string name="my_space">MySpace</string>
-   <string name="qzone">Qzone</string>
-   <string name="stumbleupon">StumbleUpon</string>
+	<!--	Other Social Media websites		-->
+	<string name="other_social_media">Other Social Media</string>
+	<string name="nine_gag">9 Gag</string>
+	<string name="badoo">Badoo</string>
+	<string name="dailymotion">Dailymotion</string>
+	<string name="digg">Digg</string>
+	<string name="flickr">Flikcr</string>
+	<string name="linkedin">Linkedin</string>
+	<string name="meetup">Meetup</string>
+	<string name="my_life">MyLife</string>
+	<string name="my_space">MySpace</string>
+	<string name="qzone">Qzone</string>
+	<string name="stumbleupon">StumbleUpon</string>
 
 </resources>
